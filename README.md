@@ -44,7 +44,7 @@ O **Portal** reúne dois ambientes de aprendizagem dentro do mesmo portal. Cada 
 
 ---
 
-## 🧭 Como funciona a jornada
+<!-- ## 🧭 Como funciona a jornada
 
 ```text
 Página Inicial
@@ -184,9 +184,9 @@ Cada aluno possui uma área de acompanhamento onde pode visualizar:
 - checkpoints realizados;
 - continuidade da trilha.
 
----
+--- -->
 
-## 🛠️ Tecnologias
+## Tecnologias
 
 <div align="center">
 
@@ -201,7 +201,7 @@ Cada aluno possui uma área de acompanhamento onde pode visualizar:
 </div>
 
 
-## 🌐 Acesso
+<!-- ## 🌐 Acesso
 
 <div align="center">
 
@@ -211,7 +211,7 @@ Cada aluno possui uma área de acompanhamento onde pode visualizar:
 
 </div>
 
----
+--- -->
 
 ## 🏫 Projeto Educacional
 
