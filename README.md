@@ -1,4 +1,4 @@
-<!-- <div align="center">
+<div align="center">
 
 # PORTAL 
 
@@ -193,7 +193,7 @@ Cada aluno possui uma área de acompanhamento onde pode visualizar:
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![Supabase](https://img.shields.io/badge/Supabase-3FCF8E?style=for-the-badge&logo=supabase&logoColor=white)
+<!-- ![Supabase](https://img.shields.io/badge/Supabase-3FCF8E?style=for-the-badge&logo=supabase&logoColor=white) -->
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
 ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
@@ -213,9 +213,9 @@ Cada aluno possui uma área de acompanhamento onde pode visualizar:
 
 --- -->
 
-## 🏫 Projeto Educacional
+## Projeto Educacional
 
 **Escola SENAI Luiz Varga — Limeira/SP — CFP 505**  
 Curso Técnico em Desenvolvimento de Sistemas
 
-Desenvolvido para fins educacionais como ambiente de apoio às aulas, desafios, práticas e projetos integradores. Desenvolvido por Bruno Moraes
+Desenvolvido por Bruno Moraes
