@@ -22,7 +22,7 @@ O **Cenário Inovador** reúne dois ambientes de aprendizagem dentro do mesmo po
 
 ### 🪐 Database Command Center
 
-<a href="https://brunoamoraes.github.io/PORTAL/index.html">
+<a href="https://brunoamoraes.github.io/PORTAL-BASE/index.html">
   <img src="assets/readme/banner_database_command_center.png" alt="Acessar Database Command Center" width="100%">
 </a>
 
@@ -34,8 +34,8 @@ O **Cenário Inovador** reúne dois ambientes de aprendizagem dentro do mesmo po
 
 ### 🔴 Hawkins Web Lab
 
-<a href="https://brunoamoraes.github.io/PORTAL/index.html">
-  <img src="assets/readme/banner_hawkins_web_lab.jpg" alt="Acessar Hawkins Web Lab" width="100%">
+<a href="https://brunoamoraes.github.io/PORTAL-BASE/index.html">
+  <img src="assets/readme/banner_hawkins_web_lab.png" alt="Acessar Hawkins Web Lab" width="100%">
 </a>
 
 **HTML • CSS • JavaScript • DOM • Wireframe • Figma • Desenvolvimento Web**
@@ -205,7 +205,7 @@ Cada aluno possui uma área de acompanhamento onde pode visualizar:
 
 <div align="center">
 
-### [🚀 ACESSAR PORTAL](https://brunoamoraes.github.io/PORTAL/index.html)
+### [🚀 ACESSAR PORTAL](https://brunoamoraes.github.io/PORTAL-BASE/index.html)
 
 **Aprenda. Experimente. Desenvolva.**
 
