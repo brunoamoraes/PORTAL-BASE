@@ -16,11 +16,11 @@
 
 ---
 
-## 🎮 Escolha seu universo
+## Escolha seu universo
 
 O **Portal** reúne dois ambientes de aprendizagem dentro do mesmo portal. Cada trilha possui conteúdos, missões, laboratórios, desafios, checkpoints e projetos práticos.
 
-### 🪐 Database Command Center
+### Database Command Center
 
 <a href="https://brunoamoraes.github.io/PORTAL-BASE/index.html">
   <img src="assets/readme/banner_database_command_center.png" alt="Acessar Database Command Center" width="100%">
@@ -32,7 +32,7 @@ O **Portal** reúne dois ambientes de aprendizagem dentro do mesmo portal. Cada 
 
 ---
 
-### 🔴 Hawkins Web Lab
+### Hawkins Web Lab
 
 <a href="https://brunoamoraes.github.io/PORTAL-BASE/index.html">
   <img src="assets/readme/banner_hawkins_web_lab.png" alt="Acessar Hawkins Web Lab" width="100%">
