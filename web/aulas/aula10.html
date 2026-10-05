@@ -1,5 +1,36 @@
 <!DOCTYPE html>
-<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Aula 10 | Do Wireframe ao HTML</title><link href="../../assets/css/global.css" rel="stylesheet"/> <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="../../assets/js/auth-config.js"></script><script src="../../assets/js/supabase-client.js"></script><script data-login="../../login.html" data-next="web/aulas/aula10.html" data-profile="../../aluno.html" src="../../assets/js/auth-guard.js"></script>
+
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Aula 10 | Do Wireframe ao HTML</title><link href="../../assets/css/global.css" rel="stylesheet"/> 
 </head>
 <body class="web-page web-mission-page mission-page"><header class="section-header mission-hero"><nav aria-label="Navegação da aula" class="mission-nav"><a class="back-link" href="../index.html">← Hawkins Web Lab</a><span class="mission-code">HW-10 · HTML</span></nav><p class="eyebrow">Aula 10</p><h1>Do wireframe ao HTML semântico</h1><p>Leia a intenção visual do protótipo e converta cada região em uma estrutura HTML com significado.</p><button class="button world-toggle-inline" id="toggle-world" type="button">Entrar no mundo invertido</button><section class="mission-stats"><p><strong>Área:</strong> Linguagem de Marcação</p><p><strong>Foco:</strong> Implementação</p><p><strong>Checkpoint:</strong> 5 questões</p></section></header>
-<main class="content-shell lesson-shell protected-content-host" data-assets="../../assets/js/" data-back="../index.html" data-login="../../login.html" data-protected-content="web-w10" data-track="web"><section class="protected-loading"><span class="protected-spinner"></span><p class="eyebrow">Canal autenticado</p><h2>Carregando conteúdo protegido...</h2><p>O material será solicitado ao ambiente seguro após a validação da sessão.</p></section></main><script src="../../assets/js/protected-content.js"></script></body></html>
+<main class="content-shell lesson-shell"><section class="briefing-panel"><p class="eyebrow">Briefing</p><h2>O desenho agora precisa virar código</h2><p>Não copie apenas a aparência. Interprete a função de cada região do wireframe e escolha elementos semânticos adequados: header, nav, main, section, article, aside e footer.</p></section>
+<section class="lesson-block"><header><p class="step-number">01 · Tradução</p><h2>Do bloco visual para a tag</h2></header><section class="semantic-map"><article><span>Topo institucional</span><code>&lt;header&gt;</code></article><article><span>Links principais</span><code>&lt;nav&gt;</code></article><article><span>Conteúdo central</span><code>&lt;main&gt;</code></article><article><span>Grupo temático</span><code>&lt;section&gt;</code></article><article><span>Conteúdo independente</span><code>&lt;article&gt;</code></article><article><span>Apoio complementar</span><code>&lt;aside&gt;</code></article><article><span>Informações finais</span><code>&lt;footer&gt;</code></article></section><aside class="commander-note">Use <code>&lt;div&gt;</code> apenas quando não houver um elemento semântico que represente corretamente a função daquele bloco.</aside></section>
+<section class="lesson-block lab-panel"><header><p class="step-number">02 · Laboratório</p><h2>HTML Translator</h2><p>Escreva a estrutura correspondente ao wireframe apresentado. O laboratório avalia a presença das regiões semânticas.</p></header><section class="translator-layout"><section class="mini-wireframe"><header>HEADER</header><nav>NAV</nav><main><section>SECTION</section><aside>ASIDE</aside></main><footer>FOOTER</footer></section><section><label for="translator-input">Seu HTML</label><textarea id="translator-input" spellcheck="false">&lt;header&gt;
+  &lt;h1&gt;Portal Escolar&lt;/h1&gt;
+&lt;/header&gt;
+&lt;nav&gt;...&lt;/nav&gt;
+&lt;main&gt;
+  &lt;section&gt;...&lt;/section&gt;
+  &lt;aside&gt;...&lt;/aside&gt;
+&lt;/main&gt;
+&lt;footer&gt;...&lt;/footer&gt;</textarea><button class="button" id="analyze-translation" type="button">Analisar estrutura</button><output class="lab-status" id="translation-result">A análise verificará semântica e uso excessivo de DIV.</output></section></section></section>
+<section class="lesson-block"><header><p class="step-number">03 · Exemplo</p><h2>Estrutura base</h2></header><pre class="sql-code">&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Portal Escolar&lt;/h1&gt;
+    &lt;nav&gt;...&lt;/nav&gt;
+  &lt;/header&gt;
+
+  &lt;main&gt;
+    &lt;section&gt;
+      &lt;h2&gt;Destaques&lt;/h2&gt;
+      &lt;article&gt;...&lt;/article&gt;
+    &lt;/section&gt;
+    &lt;aside&gt;...&lt;/aside&gt;
+  &lt;/main&gt;
+
+  &lt;footer&gt;...&lt;/footer&gt;
+&lt;/body&gt;</pre></section>
+<section class="lesson-block mission-assignment"><header><p class="step-number">04 · Sua missão</p><h2>Implemente seu protótipo</h2></header><p>Use o protótipo da Aula 09 como referência e crie a estrutura HTML da página. Primeiro implemente apenas a semântica e o conteúdo; deixe o CSS para a próxima etapa de refinamento.</p></section>
+<section class="lesson-block boss-panel"><p class="eyebrow">Boss Challenge</p><h2>O império das DIVs</h2><p>Você recebeu uma página construída quase totalmente com <code>&lt;div&gt;</code>. Reescreva a estrutura utilizando elementos semânticos e explique por que cada substituição melhora o documento.</p></section>
+<section class="lesson-block checkpoint" data-checkpoint="w10"><header><p class="step-number">05 · Checkpoint</p><h2>Validação da aula</h2></header><form class="quiz-form"><fieldset><legend>1. O conteúdo principal deve ficar em:</legend><label><input name="q1" type="radio" value="a"/> main</label><label><input name="q1" type="radio" value="b"/> title</label></fieldset><fieldset><legend>2. Navegação principal usa preferencialmente:</legend><label><input name="q2" type="radio" value="a"/> nav</label><label><input name="q2" type="radio" value="b"/> meta</label></fieldset><fieldset><legend>3. article representa:</legend><label><input name="q3" type="radio" value="a"/> Conteúdo independente</label><label><input name="q3" type="radio" value="b"/> Qualquer espaçamento</label></fieldset><fieldset><legend>4. div deve ser usada:</legend><label><input name="q4" type="radio" value="a"/> Quando não houver elemento semântico adequado</label><label><input name="q4" type="radio" value="b"/> Para substituir todas as tags</label></fieldset><fieldset><legend>5. O protótipo deve ser interpretado como:</legend><label><input name="q5" type="radio" value="a"/> Referência visual e funcional</label><label><input name="q5" type="radio" value="b"/> Código HTML pronto</label></fieldset><button class="button quiz-submit" type="submit">Validar checkpoint</button><output aria-live="polite" class="quiz-result"></output></form></section>
+<nav class="mission-footer-nav"><a class="button secondary-button" href="aula09.html">← Aula anterior</a><a class="button" href="../index.html">Concluir fase → Hawkins Web Lab</a></nav></main><script src="../../assets/js/web-lessons.js"></script><script src="../../assets/js/web-v9.js"></script></body></html>

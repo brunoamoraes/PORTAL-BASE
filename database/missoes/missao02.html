@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Missão 02 | Mapeando a Galáxia</title><link href="../../assets/css/global.css" rel="stylesheet"/>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="../../assets/js/auth-config.js"></script><script src="../../assets/js/supabase-client.js"></script><script data-login="../../login.html" data-next="database/missoes/missao02.html" data-profile="../../aluno.html" src="../../assets/js/auth-guard.js"></script>
+
 </head>
 <body class="database-page mission-page">
 <header class="section-header mission-hero">
@@ -13,6 +13,52 @@
 <p>Transforme necessidades do negócio em entidades, atributos e relacionamentos antes de criar qualquer tabela.</p>
 <section class="mission-stats"><p><strong>Nível:</strong> Básico</p><p><strong>Objetivo:</strong> Modelo conceitual</p><p><strong>Checkpoint:</strong> 5 questões</p></section>
 </header>
-<main class="content-shell lesson-shell protected-content-host" data-assets="../../assets/js/" data-back="../index.html" data-login="../../login.html" data-protected-content="database-m02" data-track="database"><section class="protected-loading"><span class="protected-spinner"></span><p class="eyebrow">Canal autenticado</p><h2>Carregando conteúdo protegido...</h2><p>O material será solicitado ao ambiente seguro após a validação da sessão.</p></section></main>
-
-<script src="../../assets/js/protected-content.js"></script></body></html>
+<main class="content-shell lesson-shell">
+<section class="briefing-panel"><p class="eyebrow">Briefing</p><h2>O mapa vem antes da construção</h2><p>O SmartCoffee precisa controlar clientes, produtos e pedidos. Antes do SQL, precisamos compreender quais elementos existem no negócio, quais características possuem e como se relacionam.</p></section>
+<section class="lesson-block">
+<header><p class="step-number">01 · Conteúdo</p><h2>Entidade, atributo e relacionamento</h2></header>
+<section class="concept-grid">
+<article class="concept-card"><h3>Entidade</h3><p>Algo relevante sobre o qual o sistema precisa guardar dados.</p><p class="example-line">Ex.: CLIENTE, PRODUTO, PEDIDO.</p></article>
+<article class="concept-card"><h3>Atributo</h3><p>Característica que descreve uma entidade.</p><p class="example-line">CLIENTE → nome, email, telefone.</p></article>
+<article class="concept-card"><h3>Relacionamento</h3><p>Associação existente entre entidades segundo uma regra do negócio.</p><p class="example-line">CLIENTE realiza PEDIDO.</p></article>
+<article class="concept-card"><h3>MER / DER</h3><p>O MER descreve a estrutura conceitual; o DER é sua representação gráfica.</p></article>
+</section>
+</section>
+<section class="lesson-block diagram-panel">
+<header><p class="step-number">02 · Demonstração</p><h2>Leitura do modelo conceitual</h2></header>
+<section aria-label="Modelo conceitual simplificado do SmartCoffee" class="entity-map">
+<article class="entity-node"><strong>CLIENTE</strong><span>nome</span><span>email</span><span>telefone</span></article>
+<p class="relationship-arrow">realiza →</p>
+<article class="entity-node"><strong>PEDIDO</strong><span>data</span><span>status</span><span>valor_total</span></article>
+</section>
+<p class="model-reading"><strong>Leitura:</strong> um CLIENTE realiza PEDIDOS. Cada entidade possui atributos próprios, e o relacionamento deve refletir a regra de negócio.</p>
+</section>
+<section class="lesson-block lab-panel" data-lab="entity-sort">
+<header><p class="step-number">03 · Laboratório</p><h2>Scanner de modelagem</h2><p>Classifique cada termo do SmartCoffee.</p></header>
+<section class="term-classifier">
+<article class="term-card" data-answer="entidade"><strong>PRODUTO</strong><section class="term-actions"><button data-choice="entidade" type="button">Entidade</button><button data-choice="atributo" type="button">Atributo</button><button data-choice="relacionamento" type="button">Relacionamento</button></section><output></output></article>
+<article class="term-card" data-answer="atributo"><strong>preco</strong><section class="term-actions"><button data-choice="entidade" type="button">Entidade</button><button data-choice="atributo" type="button">Atributo</button><button data-choice="relacionamento" type="button">Relacionamento</button></section><output></output></article>
+<article class="term-card" data-answer="relacionamento"><strong>realiza</strong><section class="term-actions"><button data-choice="entidade" type="button">Entidade</button><button data-choice="atributo" type="button">Atributo</button><button data-choice="relacionamento" type="button">Relacionamento</button></section><output></output></article>
+<article class="term-card" data-answer="entidade"><strong>CATEGORIA</strong><section class="term-actions"><button data-choice="entidade" type="button">Entidade</button><button data-choice="atributo" type="button">Atributo</button><button data-choice="relacionamento" type="button">Relacionamento</button></section><output></output></article>
+</section>
+</section>
+<section class="lesson-block mission-assignment">
+<header><p class="step-number">04 · Sua missão</p><h2>Construa o primeiro mapa do SmartCoffee</h2></header>
+<p>Considere as operações: cadastro de clientes, cardápio, pedidos e reservas.</p>
+<ol><li>Identifique no mínimo quatro entidades.</li><li>Defina pelo menos quatro atributos para cada entidade.</li><li>Crie ao menos três relacionamentos.</li><li>Escreva cada relacionamento como uma frase de regra de negócio.</li></ol>
+</section>
+<section class="lesson-block boss-panel"><p class="eyebrow">Boss Challenge</p><h2>Entidade ou atributo?</h2><p>Um grupo criou a entidade <strong>ENDEREÇO</strong>, enquanto outro colocou endereço como atributo de CLIENTE. Explique por que as duas escolhas podem fazer sentido dependendo dos requisitos. O que você perguntaria ao cliente antes de decidir?</p><details><summary>Ver pista</summary><p>Um cliente pode ter mais de um endereço? Precisamos armazenar CEP, cidade, número, complemento separadamente? Endereços serão reutilizados em entregas?</p></details></section>
+<section class="lesson-block checkpoint" data-checkpoint="m02">
+<header><p class="step-number">05 · Checkpoint</p><h2>Validação da missão</h2></header>
+<form class="quiz-form">
+<fieldset><legend>1. CLIENTE é normalmente um exemplo de:</legend><label><input name="q1" type="radio" value="a"/> Entidade</label><label><input name="q1" type="radio" value="b"/> Atributo</label></fieldset>
+<fieldset><legend>2. email, nome e telefone são:</legend><label><input name="q2" type="radio" value="a"/> Relacionamentos</label><label><input name="q2" type="radio" value="b"/> Atributos</label></fieldset>
+<fieldset><legend>3. Em “CLIENTE realiza PEDIDO”, “realiza” representa:</legend><label><input name="q3" type="radio" value="a"/> Relacionamento</label><label><input name="q3" type="radio" value="b"/> Entidade</label></fieldset>
+<fieldset><legend>4. O DER é:</legend><label><input name="q4" type="radio" value="a"/> Uma representação gráfica do modelo</label><label><input name="q4" type="radio" value="b"/> Um comando SQL</label></fieldset>
+<fieldset><legend>5. A modelagem conceitual deve começar principalmente a partir:</legend><label><input name="q5" type="radio" value="a"/> Das regras e necessidades do negócio</label><label><input name="q5" type="radio" value="b"/> Das cores da interface</label></fieldset>
+<button class="button quiz-submit" type="submit">Validar checkpoint</button><output class="quiz-result"></output>
+</form>
+</section>
+<nav class="mission-footer-nav"><a class="button secondary-button" href="missao01.html">← Missão 01</a><a class="button" href="missao03.html">Próxima missão → Conectando os Sistemas</a></nav>
+</main>
+<script src="../../assets/js/missions.js"></script></body></html>

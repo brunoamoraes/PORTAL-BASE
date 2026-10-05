@@ -1,5 +1,30 @@
 <!DOCTYPE html>
-<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Aula 02 | Estrutura HTML</title><link href="../../assets/css/global.css" rel="stylesheet"/> <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="../../assets/js/auth-config.js"></script><script src="../../assets/js/supabase-client.js"></script><script data-login="../../login.html" data-next="web/aulas/aula02.html" data-profile="../../aluno.html" src="../../assets/js/auth-guard.js"></script>
+
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Aula 02 | Estrutura HTML</title><link href="../../assets/css/global.css" rel="stylesheet"/> 
 </head>
 <body class="web-page web-mission-page mission-page"><header class="section-header mission-hero"><nav aria-label="Navegação da aula" class="mission-nav"><a class="back-link" href="../index.html">← Hawkins Web Lab</a><span class="mission-code">HW-02 · HTML</span></nav><p class="eyebrow">Aula 02</p><h1>Estrutura HTML</h1><p>Construa um documento HTML5 válido e entenda a função de DOCTYPE, html, head, body e metadados.</p><button class="button world-toggle-inline" id="toggle-world" type="button">Entrar no mundo invertido</button><section class="mission-stats"><p><strong>Área:</strong> Linguagem de Marcação</p><p><strong>Nível:</strong> Inicial</p><p><strong>Checkpoint:</strong> 5 questões</p></section></header>
-<main class="content-shell lesson-shell protected-content-host" data-assets="../../assets/js/" data-back="../index.html" data-login="../../login.html" data-protected-content="web-w02" data-track="web"><section class="protected-loading"><span class="protected-spinner"></span><p class="eyebrow">Canal autenticado</p><h2>Carregando conteúdo protegido...</h2><p>O material será solicitado ao ambiente seguro após a validação da sessão.</p></section></main><script src="../../assets/js/protected-content.js"></script></body></html>
+<main class="content-shell lesson-shell"><section class="briefing-panel"><p class="eyebrow">Briefing</p><h2>Mensagem do Hawkins Lab</h2><p>O portal abriu, mas o documento chegou sem organização. Sua missão é reconstruir a anatomia mínima de uma página para que o navegador interprete cada parte corretamente.</p></section>
+<section class="lesson-block"><header><p class="step-number">01 · Conteúdo</p><h2>Estrutura HTML</h2></header><div class="html-anatomy"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Hawkins Web Lab&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Portal detectado&lt;/h1&gt;
+    &lt;p&gt;Documento em funcionamento.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></div>
+<section class="concept-grid"><article class="concept-card"><h3>&lt;head&gt;</h3><p>Informações sobre o documento: título, charset, viewport e links para recursos.</p></article><article class="concept-card"><h3>&lt;body&gt;</h3><p>Conteúdo que será apresentado ao usuário no navegador.</p></article><article class="concept-card"><h3>lang</h3><p>Indica o idioma principal e auxilia acessibilidade e mecanismos de busca.</p></article><article class="concept-card"><h3>charset</h3><p>Define a codificação; UTF-8 evita problemas com acentos e caracteres especiais.</p></article></section></section>
+<section class="lesson-block lab-panel"><header><p class="step-number">02 · Laboratório</p><h2>Experimento guiado</h2></header><p>Edite o conteúdo abaixo e visualize o resultado. Observe que a estrutura pode existir sem nenhuma estilização.</p><textarea id="structure-input" spellcheck="false"><header>
+  <h1>Hawkins Web Lab</h1>
+</header>
+<main>
+  <p>Minha primeira estrutura HTML.</p>
+</main>
+<footer>Laboratório ativo</footer></textarea><button class="button" id="render-structure" type="button">▶ Renderizar</button><iframe id="structure-preview" sandbox="" title="Pré-visualização da estrutura HTML"></iframe></section>
+<section class="lesson-block mission-assignment"><header><p class="step-number">03 · Sua missão</p><h2>Aplicação prática</h2></header><p>Crie um arquivo index.html com estrutura HTML5 completa, idioma pt-BR, UTF-8, viewport, title, um h1 e dois parágrafos. Abra no navegador e inspecione com F12.</p></section>
+<section class="lesson-block boss-panel"><p class="eyebrow">Boss Challenge</p><h2>Falha no portal</h2><p>Uma página apresenta acentos quebrados, título incorreto na aba e visual ruim no celular. Identifique quais elementos/metadados você revisaria primeiro.</p></section>
+<section class="lesson-block checkpoint" data-checkpoint="w02"><header><p class="step-number">04 · Checkpoint</p><h2>Validação da aula</h2></header><form class="quiz-form"><fieldset><legend>1. DOCTYPE indica ao navegador:</legend><label><input name="q1" type="radio" value="a"/> Que o documento usa HTML5</label><label><input name="q1" type="radio" value="b"/> Que o arquivo é CSS</label></fieldset><fieldset><legend>2. O conteúdo visível normalmente fica em:</legend><label><input name="q2" type="radio" value="a"/> body</label><label><input name="q2" type="radio" value="b"/> head</label></fieldset><fieldset><legend>3. O title aparece principalmente:</legend><label><input name="q3" type="radio" value="a"/> Dentro do parágrafo</label><label><input name="q3" type="radio" value="b"/> Na aba do navegador</label></fieldset><fieldset><legend>4. UTF-8 ajuda a:</legend><label><input name="q4" type="radio" value="a"/> Representar corretamente caracteres e acentos</label><label><input name="q4" type="radio" value="b"/> Criar tabelas SQL</label></fieldset><fieldset><legend>5. lang="pt-BR" informa:</legend><label><input name="q5" type="radio" value="a"/> O idioma principal do documento</label><label><input name="q5" type="radio" value="b"/> A cor do site</label></fieldset><button class="button quiz-submit" type="submit">Validar checkpoint</button><output aria-live="polite" class="quiz-result"></output></form></section>
+<nav class="mission-footer-nav"><a class="button secondary-button" href="aula01.html">← Aula anterior</a><a class="button" href="aula03.html">Próxima aula → HTML Semântico</a></nav></main><script src="../../assets/js/web-lessons.js"></script><script src="../../assets/js/web-v9.js"></script></body></html>

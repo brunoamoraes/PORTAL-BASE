@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="pt-BR">
-<head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Missão 10 | Operação SmartCoffee</title><link href="../../assets/css/global.css" rel="stylesheet"/> <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="../../assets/js/auth-config.js"></script><script src="../../assets/js/supabase-client.js"></script><script data-login="../../login.html" data-next="database/missoes/missao10.html" data-profile="../../aluno.html" src="../../assets/js/auth-guard.js"></script>
+<head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Missão 10 | Operação SmartCoffee</title><link href="../../assets/css/global.css" rel="stylesheet"/> 
 </head>
 <body class="database-page mission-page smartcoffee-page">
 <header class="section-header mission-hero">
@@ -9,6 +9,49 @@
 <p class="eyebrow">Missão 10 · Operação Final</p><h1>SmartCoffee Control</h1><p>Una modelagem, SQL e interface web em uma aplicação visual de cadastro e gerenciamento de produtos.</p>
 <section class="mission-stats"><p><strong>Nível:</strong> Aplicação</p><p><strong>Objetivo:</strong> CRUD</p><p><strong>Tecnologias:</strong> HTML + CSS + JS + SQL</p></section>
 </header>
-<main class="content-shell lesson-shell protected-content-host" data-assets="../../assets/js/" data-back="../index.html" data-login="../../login.html" data-protected-content="database-m10" data-track="database"><section class="protected-loading"><span class="protected-spinner"></span><p class="eyebrow">Canal autenticado</p><h2>Carregando conteúdo protegido...</h2><p>O material será solicitado ao ambiente seguro após a validação da sessão.</p></section></main>
-
-<script src="../../assets/js/protected-content.js"></script></body></html>
+<main class="content-shell lesson-shell">
+<section class="briefing-panel"><p class="eyebrow">Briefing</p><h2>Do banco para a aplicação</h2><p>O CRUD conecta ações de interface às operações de dados: <strong>Create</strong> → INSERT, <strong>Read</strong> → SELECT, <strong>Update</strong> → UPDATE e <strong>Delete</strong> → DELETE. Nesta versão, a aplicação funciona no navegador para demonstrar o fluxo antes da conexão com MySQL/Node.js.</p></section>
+<section class="lesson-block"><header><p class="step-number">01 · Arquitetura</p><h2>O caminho de uma ação</h2></header>
+<section aria-label="Fluxo CRUD" class="crud-flow"><article><strong>HTML</strong><span>formulário e tabela</span></article><b>→</b><article><strong>JavaScript</strong><span>captura a ação</span></article><b>→</b><article><strong>Backend</strong><span>valida e executa</span></article><b>→</b><article><strong>MySQL</strong><span>persiste os dados</span></article></section>
+<aside class="commander-note">Nesta simulação, o JavaScript substitui temporariamente o backend e o banco real. Assim o aluno entende o CRUD visualmente antes de trabalhar com conexão, rotas e persistência.</aside>
+</section>
+<section class="lesson-block smartcoffee-app"><header><p class="step-number">02 · Aplicação Interativa</p><h2>Painel de Produtos SmartCoffee</h2><p>Cadastre, edite e exclua produtos. As alterações ficam salvas no navegador deste dispositivo.</p></header>
+<section class="coffee-dashboard">
+<form class="coffee-form" id="coffee-form">
+<input id="coffee-id" type="hidden"/>
+<label>Produto<input id="coffee-name" maxlength="60" placeholder="Ex.: Cappuccino" required=""/></label>
+<label>Preço (R$)<input id="coffee-price" min="0" placeholder="12.90" required="" step="0.01" type="number"/></label>
+<label>Estoque<input id="coffee-stock" min="0" placeholder="10" required="" step="1" type="number"/></label>
+<label>Categoria<select id="coffee-category"><option>Cafés</option><option>Bebidas</option><option>Doces</option><option>Salgados</option></select></label>
+<section class="coffee-form-actions"><button class="button" id="coffee-submit" type="submit">Cadastrar produto</button><button class="button secondary-button" hidden="" id="coffee-cancel" type="button">Cancelar edição</button></section>
+<output class="choice-feedback" id="coffee-feedback"></output>
+</form>
+<section aria-label="Resumo do estoque" class="coffee-summary"><article><span>Produtos</span><strong id="coffee-total-products">0</strong></article><article><span>Unidades</span><strong id="coffee-total-stock">0</strong></article><article><span>Valor em estoque</span><strong id="coffee-inventory-value">R$ 0,00</strong></article></section>
+</section>
+<section class="data-dictionary-wrap"><table class="data-dictionary coffee-table"><thead><tr><th>ID</th><th>Produto</th><th>Categoria</th><th>Preço</th><th>Estoque</th><th>Ações</th></tr></thead><tbody id="coffee-table-body"></tbody></table></section>
+</section>
+<section class="lesson-block"><header><p class="step-number">03 · SQL equivalente</p><h2>O que aconteceria no banco?</h2></header>
+<section class="concept-grid"><article class="concept-card"><h3>Create</h3><pre class="sql-code"><code>INSERT INTO produto
+(nome, preco, estoque)
+VALUES (?, ?, ?);</code></pre></article><article class="concept-card"><h3>Read</h3><pre class="sql-code"><code>SELECT *
+FROM produto
+ORDER BY nome;</code></pre></article><article class="concept-card"><h3>Update</h3><pre class="sql-code"><code>UPDATE produto
+SET nome=?, preco=?, estoque=?
+WHERE id_produto=?;</code></pre></article><article class="concept-card"><h3>Delete</h3><pre class="sql-code"><code>DELETE FROM produto
+WHERE id_produto=?;</code></pre></article></section>
+</section>
+<section class="lesson-block mission-assignment"><header><p class="step-number">04 · Sua missão</p><h2>Transforme a simulação em sistema</h2></header><ol><li>Cadastre pelo menos quatro produtos de categorias diferentes.</li><li>Edite preço e estoque de um produto.</li><li>Exclua um item e observe a atualização dos indicadores.</li><li>Relacione cada botão da interface ao comando SQL correspondente.</li><li>Desenhe o fluxo futuro: formulário → JavaScript → rota Node.js → MySQL → resposta → atualização da interface.</li></ol></section>
+<section class="lesson-block boss-panel"><p class="eyebrow">Boss Challenge Final</p><h2>CRUD real com MySQL</h2><p>Quando avançarmos para integração real, esta mesma interface poderá chamar uma API Node.js. O objetivo será substituir o armazenamento local por rotas <code>GET</code>, <code>POST</code>, <code>PUT</code> e <code>DELETE</code> conectadas ao banco SmartCoffee.</p></section>
+<section class="lesson-block checkpoint" data-checkpoint="m10"><header><p class="step-number">05 · Checkpoint Final</p><h2>Validação da operação</h2></header>
+<form class="quiz-form">
+<fieldset><legend>1. CREATE no CRUD corresponde principalmente a:</legend><label><input name="q1" type="radio" value="a"/> INSERT</label><label><input name="q1" type="radio" value="b"/> SELECT</label></fieldset>
+<fieldset><legend>2. READ corresponde principalmente a:</legend><label><input name="q2" type="radio" value="a"/> SELECT</label><label><input name="q2" type="radio" value="b"/> DROP</label></fieldset>
+<fieldset><legend>3. UPDATE deve normalmente identificar o registro usando:</legend><label><input name="q3" type="radio" value="a"/> WHERE + chave</label><label><input name="q3" type="radio" value="b"/> GROUP BY</label></fieldset>
+<fieldset><legend>4. O backend é responsável por:</legend><label><input name="q4" type="radio" value="a"/> Receber, validar e processar requisições</label><label><input name="q4" type="radio" value="b"/> Apenas escolher cores do site</label></fieldset>
+<fieldset><legend>5. O MySQL, no fluxo final, será responsável por:</legend><label><input name="q5" type="radio" value="a"/> Persistir os dados</label><label><input name="q5" type="radio" value="b"/> Renderizar o CSS</label></fieldset>
+<button class="button quiz-submit" type="submit">Validar operação</button><output class="quiz-result"></output>
+</form>
+</section>
+<nav class="mission-footer-nav"><a class="button secondary-button" href="missao09.html">← Missão 09</a><a class="button" href="../index.html">Concluir ciclo de Banco de Dados →</a></nav>
+</main>
+<script src="../../assets/js/missions.js"></script></body></html>

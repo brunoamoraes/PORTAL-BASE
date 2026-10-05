@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Hawkins Web Lab | Cenário Inovador</title>
 <link href="../assets/css/global.css" rel="stylesheet"/>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="../assets/js/auth-config.js"></script><script src="../assets/js/supabase-client.js"></script><script data-login="../login.html" data-next="web/index.html" data-profile="../aluno.html" src="../assets/js/auth-guard.js"></script>
+
 </head>
 <body class="web-page">
 <header class="section-header">
@@ -16,7 +16,41 @@
 <p>HTML constrói o mundo. CSS muda sua aparência. JavaScript faz tudo acontecer.</p>
 <button class="button" id="toggle-world" type="button">Entrar no mundo invertido</button>
 </header>
-<main class="content-shell protected-content-host" data-assets="../assets/js/" data-back="../index.html" data-login="../login.html" data-protected-content="web-index" data-track="web"><section class="protected-loading"><span class="protected-spinner"></span><p class="eyebrow">Canal autenticado</p><h2>Carregando conteúdo protegido...</h2><p>O material será solicitado ao ambiente seguro após a validação da sessão.</p></section></main>
+<main class="content-shell">
+<section aria-label="Trilha de Linguagem de Marcação" class="lesson-timeline">
+<a class="web-lesson-link" href="aulas/aula01.html"><article class="web-lesson available"><span>01</span><h2>Introdução à Web</h2><p>Internet × Web, navegador, cliente/servidor e o trio HTML, CSS e JavaScript.</p><strong class="mission-status">Abrir aula →</strong></article></a>
+<a class="web-lesson-link" href="aulas/aula02.html"><article class="web-lesson available"><span>02</span><h2>Estrutura HTML</h2><p>DOCTYPE, html, head, body, metadados, títulos, parágrafos e DevTools.</p><strong class="mission-status">Abrir aula →</strong></article></a>
+<a class="web-lesson-link" href="aulas/aula03.html"><article class="web-lesson available"><span>03</span><h2>HTML Semântico</h2><p>header, nav, main, section, article e footer com significado.</p><strong class="mission-status">Abrir aula →</strong></article></a>
+<a class="web-lesson-link" href="aulas/aula04.html"><article class="web-lesson available"><span>04</span><h2>Cores</h2><p>Hexadecimal, RGB, contraste, identidade visual e psicologia das cores.</p><strong class="mission-status">Abrir aula →</strong></article></a>
+<a class="web-lesson-link" href="aulas/aula05.html"><article class="web-lesson available"><span>05</span><h2>Imagens</h2><p>img, src, alt, formatos, caminhos e background-image.</p><strong class="mission-status">Abrir aula →</strong></article></a>
+<a class="web-lesson-link" href="aulas/aula06.html"><article class="web-lesson available"><span>06</span><h2>CSS</h2><p>Seletores, CSS externo, box model, tipografia e estilos.</p><strong class="mission-status">Abrir aula →</strong></article></a>
+<a class="web-lesson-link" href="aulas/aula07.html"><article class="web-lesson available"><span>07</span><h2>Layouts</h2><p>Hierarquia, composição, regiões e preparação para wireframe.</p><strong class="mission-status">Abrir aula →</strong></article></a>
+<a class="web-lesson-link" href="aulas/aula08.html"><article class="web-lesson available"><span>08</span><h2>Wireframe</h2><p>Planejamento de baixa fidelidade e organização da interface por blocos.</p><strong class="mission-status">Abrir aula →</strong></article></a>
+<a class="web-lesson-link" href="aulas/aula09.html"><article class="web-lesson available"><span>09</span><h2>Figma</h2><p>Protótipo de alta fidelidade, paleta, tipografia, componentes e consistência.</p><strong class="mission-status">Abrir aula →</strong></article></a>
+<a class="web-lesson-link" href="aulas/aula10.html"><article class="web-lesson available"><span>10</span><h2>Do Wireframe ao HTML</h2><p>Transformação do layout visual em estrutura HTML semântica.</p><strong class="mission-status">Abrir aula →</strong></article></a>
+<a class="web-lesson-link" href="aulas/aula11.html"><article class="web-lesson available"><span>11</span><h2>Flexbox</h2><p>Eixos, alinhamento, distribuição, gap e responsividade com Flexbox.</p><strong class="mission-status">Abrir aula →</strong></article></a>
+<a class="web-lesson-link" href="aulas/aula12.html"><article class="web-lesson available"><span>12</span><h2>CSS Avançado</h2><p>Variáveis CSS, pseudo-classes, hover, transition, responsividade e refinamento visual.</p><strong class="mission-status">Abrir aula →</strong></article></a>
+<a class="web-lesson-link" href="aulas/aula13.html"><article class="web-lesson available"><span>13</span><h2>JavaScript e DOM</h2><p>Variáveis, funções, querySelector, eventos, classList e manipulação do DOM.</p><strong class="mission-status">Abrir aula →</strong></article></a>
+<article class="web-lesson locked"><span>14</span><h2>Interatividade</h2><p>Manipulação do DOM e respostas às ações do usuário.</p><strong class="mission-status">Próxima fase</strong></article>
+<article class="web-lesson locked"><span>15</span><h2>Projeto</h2><p>Consolidação da experiência web.</p><strong class="mission-status">Próxima fase</strong></article>
+<article class="web-lesson locked featured"><span>16</span><h2>Formulário + Banco de Dados</h2><p>Ponte entre interface, dados e cadastro de produtos.</p><strong class="mission-status">Projeto final</strong></article>
+</section>
+<section class="lab-panel">
+<div>
+<p class="eyebrow">Web Lab</p>
+<h2>HTML semântico em ação</h2>
+<p>Edite o código e visualize o resultado ao lado.</p>
+</div>
+<div class="editor-layout">
+<div>
+<label for="html-input">HTML</label>
+<textarea id="html-input" spellcheck="false"><article>\n  <h2>Laboratório Hawkins</h2>\n  <p>Bem-vindo ao experimento.</p>\n</article></textarea>
+<button class="button" id="render-html" type="button">▶ Visualizar</button>
+</div>
+<iframe id="html-preview" sandbox="" title="Pré-visualização do HTML"></iframe>
+</div>
+</section>
+</main>
 <script src="../assets/js/web.js"></script>
-<script src="../assets/js/protected-content.js"></script></body>
+</body>
 </html>

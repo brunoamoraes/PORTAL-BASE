@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="pt-BR">
-<head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Missão 05 | Construindo a Base</title><link href="../../assets/css/global.css" rel="stylesheet"/> <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="../../assets/js/auth-config.js"></script><script src="../../assets/js/supabase-client.js"></script><script data-login="../../login.html" data-next="database/missoes/missao05.html" data-profile="../../aluno.html" src="../../assets/js/auth-guard.js"></script>
+<head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Missão 05 | Construindo a Base</title><link href="../../assets/css/global.css" rel="stylesheet"/> 
 </head>
 <body class="database-page mission-page">
 <header class="section-header mission-hero">
@@ -9,6 +9,66 @@
 <p class="eyebrow">Missão 05</p><h1>Construindo a Base</h1><p>Transforme o modelo conceitual em estruturas lógicas com tabelas, campos, tipos, chaves e um dicionário de dados consistente.</p>
 <section class="mission-stats"><p><strong>Nível:</strong> Intermediário</p><p><strong>Objetivo:</strong> Modelo lógico</p><p><strong>Checkpoint:</strong> 5 questões</p></section>
 </header>
-<main class="content-shell lesson-shell protected-content-host" data-assets="../../assets/js/" data-back="../index.html" data-login="../../login.html" data-protected-content="database-m05" data-track="database"><section class="protected-loading"><span class="protected-spinner"></span><p class="eyebrow">Canal autenticado</p><h2>Carregando conteúdo protegido...</h2><p>O material será solicitado ao ambiente seguro após a validação da sessão.</p></section></main>
-
-<script src="../../assets/js/protected-content.js"></script></body></html>
+<main class="content-shell lesson-shell">
+<section class="briefing-panel"><p class="eyebrow">Briefing</p><h2>O mapa agora precisa virar projeto técnico</h2><p>No modelo conceitual pensamos no negócio. No modelo lógico definimos como as informações serão organizadas em tabelas, quais campos existirão, quais serão suas chaves e que tipo de dado cada coluna deverá receber.</p></section>
+<section class="lesson-block">
+<header><p class="step-number">01 · Conteúdo</p><h2>Conceitual × lógico × físico</h2></header>
+<section class="concept-grid">
+<article class="concept-card"><h3>Modelo conceitual</h3><p>Representa entidades, atributos, relacionamentos e regras do negócio sem se prender à implementação.</p></article>
+<article class="concept-card"><h3>Modelo lógico</h3><p>Organiza tabelas, campos, PKs, FKs e tipos de dados de forma compatível com o modelo relacional.</p></article>
+<article class="concept-card"><h3>Modelo físico</h3><p>Materializa o projeto em um SGBD específico, incluindo sintaxe SQL, tamanhos, constraints, índices e demais detalhes de implementação.</p></article>
+<article class="concept-card"><h3>Dicionário de dados</h3><p>Documenta cada campo: nome, significado, tipo, tamanho, obrigatoriedade, chave e observações.</p></article>
+</section>
+</section>
+<section class="lesson-block">
+<header><p class="step-number">02 · Tipos de dados</p><h2>Escolha o tipo correto para cada informação</h2></header>
+<section class="concept-grid">
+<article class="concept-card"><h3>INT</h3><p>Identificadores, contadores e valores inteiros.</p></article>
+<article class="concept-card"><h3>VARCHAR(n)</h3><p>Textos de tamanho variável, como nome, e-mail e descrição curta.</p></article>
+<article class="concept-card"><h3>DECIMAL(p,s)</h3><p>Valores que exigem precisão, como preços e totais monetários.</p></article>
+<article class="concept-card"><h3>DATE / DATETIME</h3><p>Datas e registros de data/hora para pedidos, reservas e auditoria.</p></article>
+</section>
+<aside class="commander-note"><strong>Evite atalhos:</strong> preço não deve ser armazenado como texto e data não deve ser tratada como uma descrição qualquer. O tipo escolhido afeta validação, ordenação, cálculo e desempenho.</aside>
+</section>
+<section class="lesson-block">
+<header><p class="step-number">03 · Dicionário de dados</p><h2>SmartCoffee — tabela PRODUTO</h2></header>
+<section class="data-dictionary-wrap">
+<table class="data-dictionary">
+<thead><tr><th>Campo</th><th>Descrição</th><th>Tipo</th><th>Chave</th><th>Obrigatório?</th></tr></thead>
+<tbody>
+<tr><td>id_produto</td><td>Identificador do produto</td><td>INT</td><td>PK</td><td>Sim</td></tr>
+<tr><td>nome_produto</td><td>Nome exibido no cardápio</td><td>VARCHAR(100)</td><td>—</td><td>Sim</td></tr>
+<tr><td>descricao</td><td>Detalhes do item</td><td>VARCHAR(255)</td><td>—</td><td>Não</td></tr>
+<tr><td>preco</td><td>Valor de venda</td><td>DECIMAL(10,2)</td><td>—</td><td>Sim</td></tr>
+<tr><td>id_categoria</td><td>Categoria do produto</td><td>INT</td><td>FK</td><td>Sim</td></tr>
+</tbody>
+</table>
+</section>
+</section>
+<section class="lesson-block lab-panel">
+<header><p class="step-number">04 · Laboratório</p><h2>Escolha o tipo adequado</h2><p>Analise a informação e selecione o tipo de dado mais coerente.</p></header>
+<section class="term-classifier">
+<article class="term-card" data-answer="decimal"><strong>Preço de um cappuccino: 12,90</strong><section class="term-actions"><button data-choice="varchar" type="button">VARCHAR</button><button data-choice="decimal" type="button">DECIMAL</button><button data-choice="date" type="button">DATE</button></section><output></output></article>
+<article class="term-card" data-answer="varchar"><strong>E-mail do cliente</strong><section class="term-actions"><button data-choice="int" type="button">INT</button><button data-choice="varchar" type="button">VARCHAR</button><button data-choice="decimal" type="button">DECIMAL</button></section><output></output></article>
+<article class="term-card" data-answer="date"><strong>Data de nascimento</strong><section class="term-actions"><button data-choice="varchar" type="button">VARCHAR</button><button data-choice="date" type="button">DATE</button><button data-choice="decimal" type="button">DECIMAL</button></section><output></output></article>
+</section>
+</section>
+<section class="lesson-block mission-assignment">
+<header><p class="step-number">05 · Sua missão</p><h2>Monte o modelo lógico mínimo</h2></header>
+<ol><li>Crie as tabelas CLIENTE, CATEGORIA, PRODUTO e PEDIDO.</li><li>Defina pelo menos quatro campos para cada tabela.</li><li>Marque PKs e FKs.</li><li>Escolha tipos de dados adequados.</li><li>Crie o dicionário de dados de uma das tabelas com descrição, tipo, chave e obrigatoriedade.</li></ol>
+</section>
+<section class="lesson-block boss-panel"><p class="eyebrow">Boss Challenge</p><h2>O campo “telefone”</h2><p>Telefone contém apenas números na aparência, mas será que deve ser INT? Considere zero à esquerda, DDD, símbolos, código internacional e ausência de operações matemáticas. Defenda tecnicamente o tipo de dado escolhido.</p></section>
+<section class="lesson-block checkpoint" data-checkpoint="m05">
+<header><p class="step-number">06 · Checkpoint</p><h2>Validação da missão</h2></header>
+<form class="quiz-form">
+<fieldset><legend>1. O modelo lógico normalmente define:</legend><label><input name="q1" type="radio" value="a"/> Tabelas, campos, PKs e FKs</label><label><input name="q1" type="radio" value="b"/> Apenas a cor da interface</label></fieldset>
+<fieldset><legend>2. Para preço, uma escolha adequada é:</legend><label><input name="q2" type="radio" value="a"/> DECIMAL</label><label><input name="q2" type="radio" value="b"/> DATE</label></fieldset>
+<fieldset><legend>3. O dicionário de dados serve para:</legend><label><input name="q3" type="radio" value="a"/> Documentar campos e suas regras</label><label><input name="q3" type="radio" value="b"/> Substituir o banco de dados</label></fieldset>
+<fieldset><legend>4. Para um nome de cliente, normalmente usamos:</legend><label><input name="q4" type="radio" value="a"/> VARCHAR</label><label><input name="q4" type="radio" value="b"/> DECIMAL</label></fieldset>
+<fieldset><legend>5. O modelo físico:</legend><label><input name="q5" type="radio" value="a"/> Considera detalhes do SGBD e implementação</label><label><input name="q5" type="radio" value="b"/> Elimina a necessidade de SQL</label></fieldset>
+<button class="button quiz-submit" type="submit">Validar checkpoint</button><output class="quiz-result"></output>
+</form>
+</section>
+<nav class="mission-footer-nav"><a class="button secondary-button" href="missao04.html">← Missão 04</a><a class="button" href="missao06.html">Missão 06 →</a></nav>
+</main>
+<script src="../../assets/js/missions.js"></script></body></html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="pt-BR">
-<head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Missão 04 | Identificação dos Recursos</title><link href="../../assets/css/global.css" rel="stylesheet"/> <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="../../assets/js/auth-config.js"></script><script src="../../assets/js/supabase-client.js"></script><script data-login="../../login.html" data-next="database/missoes/missao04.html" data-profile="../../aluno.html" src="../../assets/js/auth-guard.js"></script>
+<head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Missão 04 | Identificação dos Recursos</title><link href="../../assets/css/global.css" rel="stylesheet"/> 
 </head>
 <body class="database-page mission-page">
 <header class="section-header mission-hero">
@@ -9,6 +9,58 @@
 <p class="eyebrow">Missão 04</p><h1>Identificação dos Recursos</h1><p>Aprenda a identificar registros, conectar tabelas e manter a integridade dos relacionamentos usando chaves primárias e estrangeiras.</p>
 <section class="mission-stats"><p><strong>Nível:</strong> Intermediário</p><p><strong>Objetivo:</strong> PK, FK e integridade</p><p><strong>Checkpoint:</strong> 5 questões</p></section>
 </header>
-<main class="content-shell lesson-shell protected-content-host" data-assets="../../assets/js/" data-back="../index.html" data-login="../../login.html" data-protected-content="database-m04" data-track="database"><section class="protected-loading"><span class="protected-spinner"></span><p class="eyebrow">Canal autenticado</p><h2>Carregando conteúdo protegido...</h2><p>O material será solicitado ao ambiente seguro após a validação da sessão.</p></section></main>
-
-<script src="../../assets/js/protected-content.js"></script></body></html>
+<main class="content-shell lesson-shell">
+<section class="briefing-panel"><p class="eyebrow">Briefing</p><h2>Cada recurso precisa de uma identidade</h2><p>Em uma base operacional, dois clientes podem ter o mesmo nome e dois produtos podem ter descrições semelhantes. O banco precisa de identificadores confiáveis para distinguir registros e manter seus vínculos. É aqui que entram as chaves.</p></section>
+<section class="lesson-block">
+<header><p class="step-number">01 · Conteúdo</p><h2>Primary Key e Foreign Key</h2></header>
+<section class="concept-grid">
+<article class="concept-card"><h3>Primary Key (PK)</h3><p>Identifica cada registro de forma única. Não deve se repetir e não pode representar um valor desconhecido.</p><p class="example-line"><code>id_cliente INT PRIMARY KEY</code></p></article>
+<article class="concept-card"><h3>Foreign Key (FK)</h3><p>Armazena uma referência a uma chave de outra tabela. É o vínculo que transforma relacionamentos do modelo em estrutura lógica.</p><p class="example-line"><code>id_cliente INT → CLIENTE.id_cliente</code></p></article>
+<article class="concept-card"><h3>Chave natural</h3><p>Usa um dado do próprio negócio como identificador, como um código oficialmente único. Exige cuidado porque regras de negócio podem mudar.</p></article>
+<article class="concept-card"><h3>Chave substituta</h3><p>É criada apenas para identificação técnica, normalmente um número sequencial. Facilita relacionamentos e reduz dependência de dados do negócio.</p></article>
+</section>
+</section>
+<section class="lesson-block diagram-panel">
+<header><p class="step-number">02 · Demonstração</p><h2>Do relacionamento para a chave estrangeira</h2></header>
+<section class="relationship-demo">
+<article class="entity-node"><strong>CLIENTE</strong><span>PK id_cliente</span><span>nome</span><span>email</span></article>
+<p class="relationship-arrow">1 ───── N</p>
+<article class="entity-node"><strong>PEDIDO</strong><span>PK id_pedido</span><span>data_pedido</span><span>FK id_cliente</span></article>
+</section>
+<p class="model-reading">A FK <strong>id_cliente</strong> fica em PEDIDO porque PEDIDO está no lado N do relacionamento.</p>
+<aside class="commander-note"><strong>Regra operacional:</strong> a PK identifica. A FK conecta. Nunca confunda a função das duas.</aside>
+</section>
+<section class="lesson-block">
+<header><p class="step-number">03 · Integridade</p><h2>O que a integridade referencial impede?</h2></header>
+<section class="compare-grid">
+<article><h3>Sem integridade</h3><p>Poderíamos cadastrar um pedido com <code>id_cliente = 999</code> mesmo que esse cliente não existisse.</p></article>
+<article><h3>Com integridade</h3><p>O SGBD verifica se o cliente referenciado existe antes de aceitar o pedido, evitando registros órfãos.</p></article>
+</section>
+</section>
+<section class="lesson-block lab-panel">
+<header><p class="step-number">04 · Laboratório</p><h2>Classifique o papel de cada campo</h2><p>Escolha se o campo funciona como PK, FK ou atributo comum.</p></header>
+<section class="term-classifier">
+<article class="term-card" data-answer="pk"><strong>CLIENTE.id_cliente</strong><section class="term-actions"><button data-choice="pk" type="button">PK</button><button data-choice="fk" type="button">FK</button><button data-choice="attr" type="button">Atributo</button></section><output></output></article>
+<article class="term-card" data-answer="fk"><strong>PEDIDO.id_cliente</strong><section class="term-actions"><button data-choice="pk" type="button">PK</button><button data-choice="fk" type="button">FK</button><button data-choice="attr" type="button">Atributo</button></section><output></output></article>
+<article class="term-card" data-answer="attr"><strong>PRODUTO.nome_produto</strong><section class="term-actions"><button data-choice="pk" type="button">PK</button><button data-choice="fk" type="button">FK</button><button data-choice="attr" type="button">Atributo</button></section><output></output></article>
+</section>
+</section>
+<section class="lesson-block mission-assignment">
+<header><p class="step-number">05 · Sua missão</p><h2>Mapeie as chaves do SmartCoffee</h2></header>
+<ol><li>Defina uma PK para CLIENTE, PRODUTO, CATEGORIA e PEDIDO.</li><li>Identifique onde ficará a FK de CLIENTE × PEDIDO.</li><li>Identifique onde ficará a FK de CATEGORIA × PRODUTO.</li><li>Para ITEM_PEDIDO, defina as FKs necessárias.</li><li>Explique por que usar CPF ou e-mail diretamente como PK pode ser uma decisão arriscada.</li></ol>
+</section>
+<section class="lesson-block boss-panel"><p class="eyebrow">Boss Challenge</p><h2>O pedido órfão</h2><p>Um operador tentou excluir um cliente que possui pedidos históricos. O sistema deve simplesmente permitir? Proponha uma regra para preservar o histórico e explique como integridade referencial e regras de negócio trabalham juntas nessa decisão.</p></section>
+<section class="lesson-block checkpoint" data-checkpoint="m04">
+<header><p class="step-number">06 · Checkpoint</p><h2>Validação da missão</h2></header>
+<form class="quiz-form">
+<fieldset><legend>1. A principal função da PK é:</legend><label><input name="q1" type="radio" value="a"/> Identificar unicamente cada registro</label><label><input name="q1" type="radio" value="b"/> Armazenar qualquer texto</label></fieldset>
+<fieldset><legend>2. A FK é usada para:</legend><label><input name="q2" type="radio" value="a"/> Conectar registros entre tabelas</label><label><input name="q2" type="radio" value="b"/> Substituir toda PK</label></fieldset>
+<fieldset><legend>3. Em CLIENTE 1:N PEDIDO, a FK de cliente normalmente fica:</legend><label><input name="q3" type="radio" value="a"/> Em PEDIDO</label><label><input name="q3" type="radio" value="b"/> Em CLIENTE</label></fieldset>
+<fieldset><legend>4. Integridade referencial ajuda a evitar:</legend><label><input name="q4" type="radio" value="a"/> Referências para registros inexistentes</label><label><input name="q4" type="radio" value="b"/> Nomes repetidos de produtos</label></fieldset>
+<fieldset><legend>5. Uma chave substituta é:</legend><label><input name="q5" type="radio" value="a"/> Um identificador técnico criado para a tabela</label><label><input name="q5" type="radio" value="b"/> Sempre o nome do cliente</label></fieldset>
+<button class="button quiz-submit" type="submit">Validar checkpoint</button><output class="quiz-result"></output>
+</form>
+</section>
+<nav class="mission-footer-nav"><a class="button secondary-button" href="missao03.html">← Missão 03</a><a class="button" href="missao05.html">Missão 05 →</a></nav>
+</main>
+<script src="../../assets/js/missions.js"></script></body></html>

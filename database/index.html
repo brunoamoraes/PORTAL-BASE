@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Database Command Center | Cenário Inovador</title>
 <link href="../assets/css/global.css" rel="stylesheet"/>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="../assets/js/auth-config.js"></script><script src="../assets/js/supabase-client.js"></script><script data-login="../login.html" data-next="database/index.html" data-profile="../aluno.html" src="../assets/js/auth-guard.js"></script>
+
 </head>
 <body class="database-page">
 <header class="section-header">
@@ -16,7 +16,31 @@
 <p>Treinamento tático em modelagem de dados, SQL e desenvolvimento de soluções.</p>
 <div class="status-bar"><span>Status da base</span><strong>ONLINE</strong></div>
 </header>
-<main class="content-shell protected-content-host" data-assets="../assets/js/" data-back="../index.html" data-login="../login.html" data-protected-content="database-index" data-track="database"><section class="protected-loading"><span class="protected-spinner"></span><p class="eyebrow">Canal autenticado</p><h2>Carregando conteúdo protegido...</h2><p>O material será solicitado ao ambiente seguro após a validação da sessão.</p></section></main>
+<main class="content-shell">
+<section aria-label="Missões de Banco de Dados" class="mission-grid">
+<article class="mission available"><a class="mission-link" href="missoes/missao01.html"><span>MISSÃO 01</span><h2>Universo dos Dados</h2><p>Banco de dados, SGBD, modelos relacionais e não relacionais.</p><strong class="mission-status">Abrir aula →</strong></a></article>
+<article class="mission available"><a class="mission-link" href="missoes/missao02.html"><span>MISSÃO 02</span><h2>Mapeando a Galáxia</h2><p>Entidades, atributos, relacionamentos e MER.</p><strong class="mission-status">Abrir aula →</strong></a></article>
+<article class="mission available"><a class="mission-link" href="missoes/missao03.html"><span>MISSÃO 03</span><h2>Conectando os Sistemas</h2><p>Cardinalidades 1:1, 1:N, N:N e regras de relacionamento.</p><strong class="mission-status">Abrir aula →</strong></a></article>
+<article class="mission available" id="mission-04"><a class="mission-link" href="missoes/missao04.html"><span>MISSÃO 04</span><h2>Identificação dos Recursos</h2><p>Chaves primárias e estrangeiras, integridade e vínculos.</p><strong class="mission-status">Abrir aula →</strong></a></article>
+<article class="mission available" id="mission-05"><a class="mission-link" href="missoes/missao05.html"><span>MISSÃO 05</span><h2>Construindo a Base</h2><p>Modelagem lógica, dicionário de dados e tipos.</p><strong class="mission-status">Abrir aula →</strong></a></article>
+<article class="mission available" id="mission-06"><a class="mission-link" href="missoes/missao06.html"><span>MISSÃO 06</span><h2>Implantação</h2><p>DDL: CREATE, ALTER, DROP, TRUNCATE e RENAME.</p><strong class="mission-status">Abrir aula →</strong></a></article>
+<article class="mission available" id="mission-07"><a class="mission-link" href="missoes/missao07.html"><span>MISSÃO 07</span><h2>Protocolos de Segurança</h2><p>Constraints, integridade, regras e consistência dos dados.</p><strong class="mission-status">Abrir aula →</strong></a></article>
+<article class="mission available" id="mission-08"><a class="mission-link" href="missoes/missao08.html"><span>MISSÃO 08</span><h2>Inteligência de Dados</h2><p>DQL: SELECT, filtros, agregações, GROUP BY, HAVING, JOIN, CASE e subconsultas.</p><strong class="mission-status">Abrir aula →</strong></a></article>
+<article class="mission available" id="mission-09"><a class="mission-link" href="missoes/missao09.html"><span>MISSÃO 09</span><h2>Manipulação de Recursos</h2><p>DML: INSERT, UPDATE e DELETE aplicados ao SmartCoffee.</p><strong class="mission-status">Abrir aula →</strong></a></article>
+<article class="mission featured available" id="mission-10"><a class="mission-link" href="missoes/missao10.html"><span>MISSÃO 10</span><h2>Operação SmartCoffee</h2><p>CRUD visual: HTML, CSS, JavaScript e preparação para integração com banco de dados.</p><strong class="mission-status">Abrir operação →</strong></a></article>
+</section>
+<section class="lab-panel">
+<div>
+<p class="eyebrow">SQL Lab</p>
+<h2>Execute uma consulta simulada</h2>
+<p>Primeiro laboratório interativo da plataforma.</p>
+</div>
+<label for="sql-input">Consulta SQL</label>
+<textarea id="sql-input" spellcheck="false">SELECT * FROM produtos;</textarea>
+<button class="button" id="run-sql" type="button">▶ Executar consulta</button>
+<div aria-live="polite" class="result-panel" id="sql-result">Aguardando comando...</div>
+</section>
+</main>
 <script src="../assets/js/database.js"></script>
-<script src="../assets/js/protected-content.js"></script></body>
+</body>
 </html>

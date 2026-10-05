@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Missão 01 | Universo dos Dados</title>
 <link href="../../assets/css/global.css" rel="stylesheet"/>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="../../assets/js/auth-config.js"></script><script src="../../assets/js/supabase-client.js"></script><script data-login="../../login.html" data-next="database/missoes/missao01.html" data-profile="../../aluno.html" src="../../assets/js/auth-guard.js"></script>
+
 </head>
 <body class="database-page mission-page">
 <header class="section-header mission-hero">
@@ -23,7 +23,81 @@
 <p><strong>Checkpoint:</strong> 5 questões</p>
 </section>
 </header>
-<main class="content-shell lesson-shell protected-content-host" data-assets="../../assets/js/" data-back="../index.html" data-login="../../login.html" data-protected-content="database-m01" data-track="database"><section class="protected-loading"><span class="protected-spinner"></span><p class="eyebrow">Canal autenticado</p><h2>Carregando conteúdo protegido...</h2><p>O material será solicitado ao ambiente seguro após a validação da sessão.</p></section></main>
-
-<script src="../../assets/js/protected-content.js"></script></body>
+<main class="content-shell lesson-shell">
+<section class="briefing-panel">
+<p class="eyebrow">Briefing</p>
+<h2>Mensagem do Command Center</h2>
+<p>Uma base recebeu milhares de registros de clientes, produtos e pedidos. Sem organização, esses registros são apenas dados dispersos. Sua primeira missão é compreender como armazená-los de maneira estruturada, segura e útil.</p>
+</section>
+<section class="lesson-block" id="conteudo">
+<header>
+<p class="step-number">01 · Conteúdo</p>
+<h2>Dados, informação, banco de dados e SGBD</h2>
+</header>
+<section class="concept-grid">
+<article class="concept-card"><h3>Dado</h3><p>Um valor isolado, ainda sem interpretação completa. Ex.: <code>12</code>, <code>Maria</code>, <code>2026-10-05</code>.</p></article>
+<article class="concept-card"><h3>Informação</h3><p>Dados organizados e contextualizados. Ex.: “Maria realizou 12 pedidos em outubro”.</p></article>
+<article class="concept-card"><h3>Banco de Dados</h3><p>Coleção organizada de dados relacionados, preparada para cadastro, consulta, atualização e exclusão controlada.</p></article>
+<article class="concept-card"><h3>SGBD</h3><p>Sistema Gerenciador de Banco de Dados: software que permite criar, administrar, proteger e consultar bancos de dados.</p></article>
+</section>
+<aside class="commander-note"><strong>Nota do comandante:</strong> MySQL, PostgreSQL e SQLite são exemplos de SGBDs que serão utilizados como referência ao longo da trilha.</aside>
+</section>
+<section class="lesson-block">
+<header><p class="step-number">02 · Comparação</p><h2>Relacional × Não relacional</h2></header>
+<section class="compare-grid">
+<article><h3>Banco relacional</h3><p>Organiza dados em tabelas relacionadas por chaves. É adequado quando estrutura, integridade e relacionamentos são importantes.</p><ul><li>Tabelas</li><li>Linhas e colunas</li><li>PK e FK</li><li>SQL</li></ul></article>
+<article><h3>Banco não relacional</h3><p>Pode armazenar documentos, chave-valor, grafos ou outras estruturas. É útil em cenários que pedem flexibilidade ou escala específica.</p><ul><li>Documentos</li><li>Chave-valor</li><li>Grafos</li><li>Estruturas flexíveis</li></ul></article>
+</section>
+</section>
+<section class="lesson-block lab-panel interactive-console" data-lab="classify">
+<header><p class="step-number">03 · Laboratório</p><h2>Radar de classificação</h2><p>Classifique cada item como <strong>Dado</strong> ou <strong>Informação</strong>.</p></header>
+<section class="challenge-card" data-answer="dado">
+<p>Registro detectado: <strong>“R$ 14,00”</strong></p>
+<button class="choice-button" data-choice="dado" type="button">Dado</button>
+<button class="choice-button" data-choice="informacao" type="button">Informação</button>
+<output class="choice-feedback"></output>
+</section>
+<section class="challenge-card" data-answer="informacao">
+<p>Registro detectado: <strong>“O Mocha foi o produto mais vendido do dia.”</strong></p>
+<button class="choice-button" data-choice="dado" type="button">Dado</button>
+<button class="choice-button" data-choice="informacao" type="button">Informação</button>
+<output class="choice-feedback"></output>
+</section>
+<section class="challenge-card" data-answer="dado">
+<p>Registro detectado: <strong>“Cliente 1042”</strong></p>
+<button class="choice-button" data-choice="dado" type="button">Dado</button>
+<button class="choice-button" data-choice="informacao" type="button">Informação</button>
+<output class="choice-feedback"></output>
+</section>
+</section>
+<section class="lesson-block mission-assignment">
+<header><p class="step-number">04 · Sua missão</p><h2>Reconhecimento de sistemas</h2></header>
+<ol>
+<li>Escolha um sistema do seu cotidiano.</li>
+<li>Liste cinco dados que ele precisa armazenar.</li>
+<li>Transforme pelo menos dois desses dados em uma informação útil.</li>
+<li>Explique por que uma planilha simples pode não ser suficiente quando o sistema cresce.</li>
+</ol>
+</section>
+<section class="lesson-block boss-panel">
+<p class="eyebrow">Boss Challenge</p>
+<h2>Falha no armazenamento</h2>
+<p>Uma cafeteria mantém clientes, produtos, pedidos e pagamentos em arquivos separados e sem padrão. Explique três problemas que podem ocorrer e como um SGBD ajudaria a resolvê-los.</p>
+<details><summary>Ver pistas</summary><p>Pense em duplicidade, atualização, segurança, integridade, busca e compartilhamento.</p></details>
+</section>
+<section class="lesson-block checkpoint" data-checkpoint="m01">
+<header><p class="step-number">05 · Checkpoint</p><h2>Validação da missão</h2></header>
+<form class="quiz-form">
+<fieldset><legend>1. O que melhor define um SGBD?</legend><label><input name="q1" type="radio" value="a"/> Um arquivo de texto</label><label><input name="q1" type="radio" value="b"/> Um software que gerencia bancos de dados</label><label><input name="q1" type="radio" value="c"/> Uma linguagem de programação</label></fieldset>
+<fieldset><legend>2. “Total de vendas do mês: R$ 48.500” é:</legend><label><input name="q2" type="radio" value="a"/> Informação</label><label><input name="q2" type="radio" value="b"/> Apenas um campo sem contexto</label></fieldset>
+<fieldset><legend>3. Em um banco relacional, os dados são normalmente organizados em:</legend><label><input name="q3" type="radio" value="a"/> Tabelas relacionadas</label><label><input name="q3" type="radio" value="b"/> Somente imagens</label></fieldset>
+<fieldset><legend>4. Qual é uma responsabilidade comum de um SGBD?</legend><label><input name="q4" type="radio" value="a"/> Controlar integridade e acesso aos dados</label><label><input name="q4" type="radio" value="b"/> Editar vídeos</label></fieldset>
+<fieldset><legend>5. MySQL é:</legend><label><input name="q5" type="radio" value="a"/> Um SGBD</label><label><input name="q5" type="radio" value="b"/> Uma tag HTML</label></fieldset>
+<button class="button quiz-submit" type="submit">Validar checkpoint</button>
+<output aria-live="polite" class="quiz-result"></output>
+</form>
+</section>
+<nav aria-label="Próxima missão" class="mission-footer-nav"><a class="button" href="missao02.html">Próxima missão → Mapeando a Galáxia</a></nav>
+</main>
+<script src="../../assets/js/missions.js"></script></body>
 </html>

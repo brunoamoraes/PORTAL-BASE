@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="pt-BR">
-<head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Missão 07 | Protocolos de Segurança</title><link href="../../assets/css/global.css" rel="stylesheet"/> <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="../../assets/js/auth-config.js"></script><script src="../../assets/js/supabase-client.js"></script><script data-login="../../login.html" data-next="database/missoes/missao07.html" data-profile="../../aluno.html" src="../../assets/js/auth-guard.js"></script>
+<head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Missão 07 | Protocolos de Segurança</title><link href="../../assets/css/global.css" rel="stylesheet"/> 
 </head>
 <body class="database-page mission-page">
 <header class="section-header mission-hero">
@@ -9,6 +9,72 @@
 <p class="eyebrow">Missão 07</p><h1>Protocolos de Segurança</h1><p>Defina regras de integridade para impedir dados inválidos e proteger a consistência da base SmartCoffee.</p>
 <section class="mission-stats"><p><strong>Nível:</strong> Intermediário</p><p><strong>Objetivo:</strong> Constraints</p><p><strong>Checkpoint:</strong> 5 questões</p></section>
 </header>
-<main class="content-shell lesson-shell protected-content-host" data-assets="../../assets/js/" data-back="../index.html" data-login="../../login.html" data-protected-content="database-m07" data-track="database"><section class="protected-loading"><span class="protected-spinner"></span><p class="eyebrow">Canal autenticado</p><h2>Carregando conteúdo protegido...</h2><p>O material será solicitado ao ambiente seguro após a validação da sessão.</p></section></main>
+<main class="content-shell lesson-shell">
+<section class="briefing-panel"><p class="eyebrow">Briefing</p><h2>Banco confiável não depende de sorte</h2><p>Uma aplicação pode errar, um formulário pode enviar valores inadequados e uma atualização pode quebrar relações. As constraints colocam regras diretamente no banco para preservar a qualidade dos dados.</p></section>
+<section class="lesson-block">
+<header><p class="step-number">01 · Conteúdo</p><h2>As principais constraints</h2></header>
+<section class="concept-grid">
+<article class="concept-card"><h3>NOT NULL</h3><p>Impede valores ausentes em campos obrigatórios.</p><p class="example-line"><code>nome VARCHAR(100) NOT NULL</code></p></article>
+<article class="concept-card"><h3>UNIQUE</h3><p>Impede repetição de valores quando a regra exige exclusividade.</p><p class="example-line"><code>email VARCHAR(150) UNIQUE</code></p></article>
+<article class="concept-card"><h3>DEFAULT</h3><p>Define um valor padrão quando nada é informado.</p><p class="example-line"><code>ativo BOOLEAN DEFAULT TRUE</code></p></article>
+<article class="concept-card"><h3>CHECK</h3><p>Valida uma condição lógica antes de aceitar o dado.</p><p class="example-line"><code>CHECK (preco &gt; 0)</code></p></article>
+<article class="concept-card"><h3>PRIMARY KEY</h3><p>Identifica unicamente cada registro.</p><p class="example-line"><code>id_produto INT PRIMARY KEY</code></p></article>
+<article class="concept-card"><h3>FOREIGN KEY</h3><p>Conecta tabelas e protege a integridade referencial.</p><p class="example-line"><code>FOREIGN KEY (id_categoria) REFERENCES categoria(id_categoria)</code></p></article>
+</section>
+</section>
+<section class="lesson-block">
+<header><p class="step-number">02 · Demonstração</p><h2>PRODUTO com regras de integridade</h2></header>
+<pre class="sql-code"><code>CREATE TABLE produto (
+  id_produto INT PRIMARY KEY AUTO_INCREMENT,
+  nome_produto VARCHAR(100) NOT NULL,
+  descricao VARCHAR(255),
+  preco DECIMAL(10,2) NOT NULL,
+  estoque INT DEFAULT 0,
+  id_categoria INT NOT NULL,
 
-<script src="../../assets/js/protected-content.js"></script></body></html>
+  CONSTRAINT chk_preco_positivo CHECK (preco &gt; 0),
+  CONSTRAINT chk_estoque_valido CHECK (estoque &gt;= 0),
+  CONSTRAINT fk_produto_categoria
+    FOREIGN KEY (id_categoria)
+    REFERENCES categoria(id_categoria)
+    ON UPDATE CASCADE
+    ON DELETE RESTRICT
+);</code></pre>
+<aside class="commander-note"><strong>Regra de negócio:</strong> um produto não pode ter preço negativo, estoque negativo nem apontar para uma categoria inexistente.</aside>
+</section>
+<section class="lesson-block">
+<header><p class="step-number">03 · Laboratório</p><h2>Escolha a proteção correta</h2><p>Analise cada regra do SmartCoffee e escolha a constraint mais adequada.</p></header>
+<section class="term-classifier">
+<article class="term-card" data-answer="unique"><strong>O e-mail do cliente não pode se repetir.</strong><section class="term-actions"><button data-choice="notnull" type="button">NOT NULL</button><button data-choice="unique" type="button">UNIQUE</button><button data-choice="default" type="button">DEFAULT</button></section><output></output></article>
+<article class="term-card" data-answer="check"><strong>O preço deve ser maior que zero.</strong><section class="term-actions"><button data-choice="check" type="button">CHECK</button><button data-choice="foreign" type="button">FOREIGN KEY</button><button data-choice="unique" type="button">UNIQUE</button></section><output></output></article>
+<article class="term-card" data-answer="default"><strong>Um novo cliente começa com status ATIVO.</strong><section class="term-actions"><button data-choice="primary" type="button">PRIMARY KEY</button><button data-choice="default" type="button">DEFAULT</button><button data-choice="notnull" type="button">NOT NULL</button></section><output></output></article>
+<article class="term-card" data-answer="foreign"><strong>Todo pedido deve estar ligado a um cliente existente.</strong><section class="term-actions"><button data-choice="check" type="button">CHECK</button><button data-choice="foreign" type="button">FOREIGN KEY</button><button data-choice="unique" type="button">UNIQUE</button></section><output></output></article>
+</section>
+</section>
+<section class="lesson-block">
+<header><p class="step-number">04 · Estratégia</p><h2>ON DELETE e ON UPDATE</h2></header>
+<section class="compare-grid">
+<article><h3>RESTRICT</h3><p>Bloqueia a exclusão quando existem registros dependentes. Útil quando apagar o registro pai geraria perda de consistência.</p></article>
+<article><h3>CASCADE</h3><p>Propaga a alteração ou exclusão para registros relacionados. Deve ser usado somente quando a regra de negócio justificar.</p></article>
+</section>
+<aside class="commander-note"><strong>Decisão de projeto:</strong> não existe uma opção “sempre correta”. A ação depende da regra de negócio e do risco que a operação representa.</aside>
+</section>
+<section class="lesson-block mission-assignment">
+<header><p class="step-number">05 · Sua missão</p><h2>Proteja o SmartCoffee</h2></header>
+<ol><li>Adicione UNIQUE ao e-mail de CLIENTE.</li><li>Defina NOT NULL para nome de cliente, nome de produto e preço.</li><li>Defina DEFAULT 0 para estoque.</li><li>Crie CHECK para impedir preço e estoque negativos.</li><li>Crie uma FOREIGN KEY entre PRODUTO e CATEGORIA.</li><li>Justifique a ação escolhida para ON DELETE.</li></ol>
+</section>
+<section class="lesson-block boss-panel"><p class="eyebrow">Boss Challenge</p><h2>Integridade versus conveniência</h2><p>Um desenvolvedor sugere remover todas as constraints para “evitar erros durante os testes”. Explique por que isso reduz a confiabilidade do sistema e cite ao menos três problemas que poderiam chegar ao banco.</p></section>
+<section class="lesson-block checkpoint" data-checkpoint="m07">
+<header><p class="step-number">06 · Checkpoint</p><h2>Validação da missão</h2></header>
+<form class="quiz-form">
+<fieldset><legend>1. Qual constraint evita valor nulo?</legend><label><input name="q1" type="radio" value="a"/> NOT NULL</label><label><input name="q1" type="radio" value="b"/> ORDER BY</label></fieldset>
+<fieldset><legend>2. Para impedir e-mails duplicados:</legend><label><input name="q2" type="radio" value="a"/> UNIQUE</label><label><input name="q2" type="radio" value="b"/> DEFAULT</label></fieldset>
+<fieldset><legend>3. Para validar preço maior que zero:</legend><label><input name="q3" type="radio" value="a"/> CHECK</label><label><input name="q3" type="radio" value="b"/> DROP</label></fieldset>
+<fieldset><legend>4. A FOREIGN KEY protege:</legend><label><input name="q4" type="radio" value="a"/> Integridade referencial</label><label><input name="q4" type="radio" value="b"/> Apenas ordenação</label></fieldset>
+<fieldset><legend>5. DEFAULT serve para:</legend><label><input name="q5" type="radio" value="a"/> Definir valor padrão</label><label><input name="q5" type="radio" value="b"/> Excluir tabela</label></fieldset>
+<button class="button quiz-submit" type="submit">Validar checkpoint</button><output class="quiz-result"></output>
+</form>
+</section>
+<nav class="mission-footer-nav"><a class="button secondary-button" href="missao06.html">← Missão 06</a><a class="button" href="missao08.html">Missão 08 →</a></nav>
+</main>
+<script src="../../assets/js/missions.js"></script></body></html>

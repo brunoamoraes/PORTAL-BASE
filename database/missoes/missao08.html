@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="pt-BR">
-<head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Missão 08 | Inteligência de Dados</title><link href="../../assets/css/global.css" rel="stylesheet"/> <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="../../assets/js/auth-config.js"></script><script src="../../assets/js/supabase-client.js"></script><script data-login="../../login.html" data-next="database/missoes/missao08.html" data-profile="../../aluno.html" src="../../assets/js/auth-guard.js"></script>
+<head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Missão 08 | Inteligência de Dados</title><link href="../../assets/css/global.css" rel="stylesheet"/> 
 </head>
 <body class="database-page mission-page">
 <header class="section-header mission-hero">
@@ -9,6 +9,75 @@
 <p class="eyebrow">Missão 08</p><h1>Inteligência de Dados</h1><p>Transforme registros em informação usando SELECT, filtros, ordenação, agregações, agrupamentos e relacionamentos.</p>
 <section class="mission-stats"><p><strong>Nível:</strong> Intermediário</p><p><strong>Objetivo:</strong> DQL</p><p><strong>Checkpoint:</strong> 5 questões</p></section>
 </header>
-<main class="content-shell lesson-shell protected-content-host" data-assets="../../assets/js/" data-back="../index.html" data-login="../../login.html" data-protected-content="database-m08" data-track="database"><section class="protected-loading"><span class="protected-spinner"></span><p class="eyebrow">Canal autenticado</p><h2>Carregando conteúdo protegido...</h2><p>O material será solicitado ao ambiente seguro após a validação da sessão.</p></section></main>
-
-<script src="../../assets/js/protected-content.js"></script></body></html>
+<main class="content-shell lesson-shell">
+<section class="briefing-panel"><p class="eyebrow">Briefing</p><h2>Consultar é interpretar o negócio</h2><p>Uma boa consulta nasce de uma pergunta. Em vez de decorar comandos isolados, você vai aprender a converter necessidades do SmartCoffee em consultas SQL progressivamente mais completas.</p></section>
+<section class="lesson-block">
+<header><p class="step-number">01 · Conteúdo</p><h2>Do SELECT ao relatório</h2></header>
+<section class="concept-grid">
+<article class="concept-card"><h3>SELECT + FROM</h3><p>Escolhem colunas e origem.</p><p class="example-line"><code>SELECT nome, preco FROM produto;</code></p></article>
+<article class="concept-card"><h3>WHERE</h3><p>Filtra linhas por condição.</p><p class="example-line"><code>WHERE preco &gt; 10</code></p></article>
+<article class="concept-card"><h3>ORDER BY</h3><p>Ordena o resultado.</p><p class="example-line"><code>ORDER BY preco DESC</code></p></article>
+<article class="concept-card"><h3>LIKE / IN / BETWEEN</h3><p>Facilitam filtros por padrão, lista ou faixa.</p><p class="example-line"><code>WHERE nome LIKE '%café%'</code></p></article>
+<article class="concept-card"><h3>Agregações</h3><p>Resumem valores.</p><p class="example-line"><code>COUNT AVG SUM MIN MAX</code></p></article>
+<article class="concept-card"><h3>GROUP BY + HAVING</h3><p>Agrupam dados e filtram grupos.</p><p class="example-line"><code>GROUP BY categoria HAVING AVG(preco) &gt; 10</code></p></article>
+<article class="concept-card"><h3>JOIN</h3><p>Combina tabelas relacionadas.</p><p class="example-line"><code>JOIN categoria c ON c.id_categoria = p.id_categoria</code></p></article>
+<article class="concept-card"><h3>CASE</h3><p>Cria classificações condicionais no resultado.</p><p class="example-line"><code>CASE WHEN estoque &lt; 5 THEN 'REPOR' END</code></p></article>
+</section>
+</section>
+<section class="lesson-block">
+<header><p class="step-number">02 · Demonstração</p><h2>Uma consulta completa</h2></header>
+<pre class="sql-code"><code>SELECT
+  c.nome_categoria,
+  COUNT(p.id_produto) AS total_produtos,
+  AVG(p.preco) AS preco_medio
+FROM produto p
+JOIN categoria c
+  ON c.id_categoria = p.id_categoria
+GROUP BY c.nome_categoria
+HAVING AVG(p.preco) &gt; 10
+ORDER BY preco_medio DESC;</code></pre>
+</section>
+<section class="lesson-block lab-panel sql-challenge-lab">
+<header><p class="step-number">03 · SQL Challenge Center</p><h2>Resolva consultas do SmartCoffee</h2><p>Escolha um desafio, escreva a consulta e execute. O laboratório reconhece os padrões esperados e mostra o resultado simulado.</p></header>
+<section aria-label="Seleção de desafios SQL" class="challenge-selector">
+<button class="challenge-preset active" data-sql-challenge="1" type="button">01 · Todos os produtos</button>
+<button class="challenge-preset" data-sql-challenge="2" type="button">02 · Preço maior que 10</button>
+<button class="challenge-preset" data-sql-challenge="3" type="button">03 · Ordenar por preço</button>
+<button class="challenge-preset" data-sql-challenge="4" type="button">04 · Média de preços</button>
+<button class="challenge-preset" data-sql-challenge="5" type="button">05 · JOIN categorias</button>
+</section>
+<article class="challenge-brief"><span>DESAFIO ATIVO</span><h3 id="sql-challenge-title">Liste todos os produtos.</h3><p id="sql-challenge-hint">Use SELECT e FROM.</p></article>
+<label for="dql-input">Consulta SQL</label>
+<textarea id="dql-input" spellcheck="false">SELECT * FROM produto;</textarea>
+<section class="ddl-actions"><button class="button" id="run-dql" type="button">▶ Executar consulta</button><button class="button secondary-button" id="show-dql-hint" type="button">Mostrar dica</button></section>
+<div aria-live="polite" class="result-panel" id="dql-result">Aguardando consulta...</div>
+<p class="challenge-progress" id="sql-challenge-progress">0 de 5 desafios concluídos</p>
+</section>
+<section class="lesson-block">
+<header><p class="step-number">04 · Leitura de problema</p><h2>Transforme perguntas em SQL</h2></header>
+<section class="concept-grid">
+<article class="concept-card"><h3>Pergunta</h3><p>Quais produtos custam entre R$ 8 e R$ 15?</p><p class="example-line"><code>WHERE preco BETWEEN 8 AND 15</code></p></article>
+<article class="concept-card"><h3>Pergunta</h3><p>Quantos produtos existem em cada categoria?</p><p class="example-line"><code>COUNT + GROUP BY</code></p></article>
+<article class="concept-card"><h3>Pergunta</h3><p>Quais categorias possuem média superior a R$ 12?</p><p class="example-line"><code>AVG + GROUP BY + HAVING</code></p></article>
+<article class="concept-card"><h3>Pergunta</h3><p>Qual o nome da categoria de cada produto?</p><p class="example-line"><code>JOIN produto + categoria</code></p></article>
+</section>
+</section>
+<section class="lesson-block mission-assignment">
+<header><p class="step-number">05 · Sua missão</p><h2>Crie o relatório operacional</h2></header>
+<ol><li>Liste nome e preço dos produtos.</li><li>Mostre apenas os produtos com preço acima de R$ 10.</li><li>Ordene os produtos do maior para o menor preço.</li><li>Calcule a média de preço.</li><li>Conte quantos produtos existem em cada categoria.</li><li>Use JOIN para mostrar produto e categoria.</li><li>Crie um CASE que sinalize produtos com estoque inferior a 5 unidades.</li></ol>
+</section>
+<section class="lesson-block boss-panel"><p class="eyebrow">Boss Challenge</p><h2>Dashboard gerencial</h2><p>Monte uma consulta que apresente por categoria: quantidade de produtos, menor preço, maior preço e preço médio. Mostre apenas categorias com pelo menos dois produtos e ordene da maior para a menor média.</p></section>
+<section class="lesson-block checkpoint" data-checkpoint="m08">
+<header><p class="step-number">06 · Checkpoint</p><h2>Validação da missão</h2></header>
+<form class="quiz-form">
+<fieldset><legend>1. Qual cláusula filtra linhas?</legend><label><input name="q1" type="radio" value="a"/> WHERE</label><label><input name="q1" type="radio" value="b"/> CREATE</label></fieldset>
+<fieldset><legend>2. Para ordenar o resultado:</legend><label><input name="q2" type="radio" value="a"/> ORDER BY</label><label><input name="q2" type="radio" value="b"/> CHECK</label></fieldset>
+<fieldset><legend>3. Para filtrar grupos depois do GROUP BY:</legend><label><input name="q3" type="radio" value="a"/> HAVING</label><label><input name="q3" type="radio" value="b"/> DEFAULT</label></fieldset>
+<fieldset><legend>4. JOIN é usado para:</legend><label><input name="q4" type="radio" value="a"/> Combinar tabelas relacionadas</label><label><input name="q4" type="radio" value="b"/> Excluir o banco</label></fieldset>
+<fieldset><legend>5. AVG calcula:</legend><label><input name="q5" type="radio" value="a"/> Média</label><label><input name="q5" type="radio" value="b"/> Quantidade</label></fieldset>
+<button class="button quiz-submit" type="submit">Validar checkpoint</button><output class="quiz-result"></output>
+</form>
+</section>
+<nav class="mission-footer-nav"><a class="button secondary-button" href="missao07.html">← Missão 07</a><a class="button" href="missao09.html">Missão 09 →</a></nav>
+</main>
+<script src="../../assets/js/missions.js"></script></body></html>

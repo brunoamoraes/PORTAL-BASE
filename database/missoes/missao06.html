@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="pt-BR">
-<head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Missão 06 | Implantação</title><link href="../../assets/css/global.css" rel="stylesheet"/> <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="../../assets/js/auth-config.js"></script><script src="../../assets/js/supabase-client.js"></script><script data-login="../../login.html" data-next="database/missoes/missao06.html" data-profile="../../aluno.html" src="../../assets/js/auth-guard.js"></script>
+<head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Missão 06 | Implantação</title><link href="../../assets/css/global.css" rel="stylesheet"/> 
 </head>
 <body class="database-page mission-page">
 <header class="section-header mission-hero">
@@ -9,6 +9,60 @@
 <p class="eyebrow">Missão 06</p><h1>Implantação</h1><p>Converta o projeto lógico em comandos SQL de definição de dados e comece a implantar oficialmente a base SmartCoffee.</p>
 <section class="mission-stats"><p><strong>Nível:</strong> Intermediário</p><p><strong>Objetivo:</strong> DDL</p><p><strong>Checkpoint:</strong> 5 questões</p></section>
 </header>
-<main class="content-shell lesson-shell protected-content-host" data-assets="../../assets/js/" data-back="../index.html" data-login="../../login.html" data-protected-content="database-m06" data-track="database"><section class="protected-loading"><span class="protected-spinner"></span><p class="eyebrow">Canal autenticado</p><h2>Carregando conteúdo protegido...</h2><p>O material será solicitado ao ambiente seguro após a validação da sessão.</p></section></main>
-
-<script src="../../assets/js/protected-content.js"></script></body></html>
+<main class="content-shell lesson-shell">
+<section class="briefing-panel"><p class="eyebrow">Briefing</p><h2>A base precisa sair do projeto</h2><p>Até aqui você modelou. Agora o SGBD precisa receber instruções para criar banco, tabelas e estruturas. DDL — Data Definition Language — é o conjunto de comandos responsável por definir e alterar essa estrutura.</p></section>
+<section class="lesson-block">
+<header><p class="step-number">01 · Conteúdo</p><h2>Principais comandos DDL</h2></header>
+<section class="concept-grid">
+<article class="concept-card"><h3>CREATE</h3><p>Cria estruturas.</p><p class="example-line"><code>CREATE DATABASE smartcoffee;</code></p></article>
+<article class="concept-card"><h3>ALTER</h3><p>Altera uma estrutura existente.</p><p class="example-line"><code>ALTER TABLE produto ADD estoque INT;</code></p></article>
+<article class="concept-card"><h3>DROP</h3><p>Remove a estrutura inteira.</p><p class="example-line"><code>DROP TABLE produto;</code></p></article>
+<article class="concept-card"><h3>TRUNCATE</h3><p>Remove os registros da tabela mantendo sua estrutura.</p><p class="example-line"><code>TRUNCATE TABLE produto;</code></p></article>
+</section>
+</section>
+<section class="lesson-block">
+<header><p class="step-number">02 · Demonstração</p><h2>Criando a tabela PRODUTO</h2></header>
+<pre class="sql-code"><code>CREATE TABLE produto (
+  id_produto INT PRIMARY KEY AUTO_INCREMENT,
+  nome_produto VARCHAR(100) NOT NULL,
+  descricao VARCHAR(255),
+  preco DECIMAL(10,2) NOT NULL,
+  id_categoria INT NOT NULL
+);</code></pre>
+<aside class="commander-note"><strong>Importante:</strong> na Missão 07 vamos aprofundar as constraints e transformar esse modelo em uma estrutura com regras de integridade completas.</aside>
+</section>
+<section class="lesson-block lab-panel ddl-lab">
+<header><p class="step-number">03 · DDL Lab</p><h2>Console de implantação SmartCoffee</h2><p>Digite um dos comandos de treinamento e observe como a estrutura simulada muda.</p></header>
+<label for="ddl-input">Comando SQL</label>
+<textarea id="ddl-input" spellcheck="false">CREATE TABLE produto (
+  id_produto INT PRIMARY KEY,
+  nome_produto VARCHAR(100),
+  preco DECIMAL(10,2)
+);</textarea>
+<section class="ddl-actions"><button class="button" id="run-ddl" type="button">▶ Executar DDL</button><button class="button secondary-button" id="reset-ddl" type="button">↺ Reiniciar laboratório</button></section>
+<div aria-live="polite" class="result-panel" id="ddl-result">Aguardando comando...</div>
+<section class="schema-monitor"><p class="eyebrow">Schema Monitor</p><div id="schema-state"><span>Nenhuma tabela implantada nesta simulação.</span></div></section>
+</section>
+<section class="lesson-block">
+<header><p class="step-number">04 · Comparação</p><h2>DROP não é TRUNCATE</h2></header>
+<section class="compare-grid"><article><h3>DROP TABLE</h3><p>Remove a tabela e sua definição. Depois do comando, a estrutura deixa de existir.</p></article><article><h3>TRUNCATE TABLE</h3><p>Remove os registros, mas mantém a tabela pronta para receber novos dados.</p></article></section>
+</section>
+<section class="lesson-block mission-assignment">
+<header><p class="step-number">05 · Sua missão</p><h2>Implante o núcleo do SmartCoffee</h2></header>
+<ol><li>Escreva <code>CREATE DATABASE smartcoffee;</code>.</li><li>Crie CLIENTE com identificador, nome, e-mail e telefone.</li><li>Crie CATEGORIA.</li><li>Crie PRODUTO com nome, descrição, preço e id_categoria.</li><li>Use ALTER TABLE para acrescentar um campo de controle de estoque em PRODUTO.</li></ol>
+</section>
+<section class="lesson-block boss-panel"><p class="eyebrow">Boss Challenge</p><h2>DROP em produção?</h2><p>Um integrante da equipe deseja executar <code>DROP TABLE pedido;</code> para “limpar os testes”. Explique por que essa decisão é perigosa e proponha uma alternativa de trabalho mais segura durante o desenvolvimento.</p></section>
+<section class="lesson-block checkpoint" data-checkpoint="m06">
+<header><p class="step-number">06 · Checkpoint</p><h2>Validação da missão</h2></header>
+<form class="quiz-form">
+<fieldset><legend>1. CREATE TABLE pertence a:</legend><label><input name="q1" type="radio" value="a"/> DDL</label><label><input name="q1" type="radio" value="b"/> DQL</label></fieldset>
+<fieldset><legend>2. Para acrescentar uma coluna usamos normalmente:</legend><label><input name="q2" type="radio" value="a"/> ALTER TABLE</label><label><input name="q2" type="radio" value="b"/> SELECT</label></fieldset>
+<fieldset><legend>3. DROP TABLE:</legend><label><input name="q3" type="radio" value="a"/> Remove a tabela</label><label><input name="q3" type="radio" value="b"/> Apenas consulta registros</label></fieldset>
+<fieldset><legend>4. TRUNCATE TABLE normalmente:</legend><label><input name="q4" type="radio" value="a"/> Remove dados e mantém a estrutura</label><label><input name="q4" type="radio" value="b"/> Cria uma tabela nova</label></fieldset>
+<fieldset><legend>5. CREATE DATABASE serve para:</legend><label><input name="q5" type="radio" value="a"/> Criar um banco de dados</label><label><input name="q5" type="radio" value="b"/> Atualizar um registro</label></fieldset>
+<button class="button quiz-submit" type="submit">Validar checkpoint</button><output class="quiz-result"></output>
+</form>
+</section>
+<nav class="mission-footer-nav"><a class="button secondary-button" href="missao05.html">← Missão 05</a><a class="button" href="missao07.html">Missão 07 →</a></nav>
+</main>
+<script src="../../assets/js/missions.js"></script></body></html>

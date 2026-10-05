@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="pt-BR">
-<head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Missão 09 | Manipulação de Recursos</title><link href="../../assets/css/global.css" rel="stylesheet"/> <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="../../assets/js/auth-config.js"></script><script src="../../assets/js/supabase-client.js"></script><script data-login="../../login.html" data-next="database/missoes/missao09.html" data-profile="../../aluno.html" src="../../assets/js/auth-guard.js"></script>
+<head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Missão 09 | Manipulação de Recursos</title><link href="../../assets/css/global.css" rel="stylesheet"/> 
 </head>
 <body class="database-page mission-page">
 <header class="section-header mission-hero">
@@ -9,6 +9,51 @@
 <p class="eyebrow">Missão 09</p><h1>Manipulação de Recursos</h1><p>Insira, altere e remova dados do SmartCoffee com segurança usando INSERT, UPDATE e DELETE.</p>
 <section class="mission-stats"><p><strong>Nível:</strong> Intermediário</p><p><strong>Objetivo:</strong> DML</p><p><strong>Checkpoint:</strong> 5 questões</p></section>
 </header>
-<main class="content-shell lesson-shell protected-content-host" data-assets="../../assets/js/" data-back="../index.html" data-login="../../login.html" data-protected-content="database-m09" data-track="database"><section class="protected-loading"><span class="protected-spinner"></span><p class="eyebrow">Canal autenticado</p><h2>Carregando conteúdo protegido...</h2><p>O material será solicitado ao ambiente seguro após a validação da sessão.</p></section></main>
+<main class="content-shell lesson-shell">
+<section class="briefing-panel"><p class="eyebrow">Briefing</p><h2>O banco agora está vivo</h2><p>Até aqui você estruturou e consultou dados. Nesta missão, cada comando passa a alterar o estado da base. Por isso, leitura cuidadosa, cláusulas WHERE e validação antes da execução tornam-se essenciais.</p></section>
+<section class="lesson-block"><header><p class="step-number">01 · Conteúdo</p><h2>Os três comandos centrais do DML</h2></header>
+<section class="concept-grid">
+<article class="concept-card"><h3>INSERT</h3><p>Adiciona novos registros.</p><p class="example-line"><code>INSERT INTO produto (nome, preco, estoque) VALUES ('Mocha', 14.90, 8);</code></p></article>
+<article class="concept-card"><h3>UPDATE</h3><p>Altera registros existentes. Use WHERE para limitar o alvo.</p><p class="example-line"><code>UPDATE produto SET preco = 15.90 WHERE id_produto = 3;</code></p></article>
+<article class="concept-card"><h3>DELETE</h3><p>Remove registros. Sem WHERE, todos os registros da tabela podem ser afetados.</p><p class="example-line"><code>DELETE FROM produto WHERE id_produto = 3;</code></p></article>
+<article class="concept-card"><h3>Transação mental</h3><p>Antes de alterar dados, confirme: tabela correta, campos corretos, condição correta e impacto esperado.</p><p class="example-line"><code>SELECT ... WHERE ...</code> antes de <code>UPDATE</code> ou <code>DELETE</code>.</p></article>
+</section>
+<aside class="commander-note"><strong>Protocolo de segurança:</strong> antes de executar UPDATE ou DELETE em um banco real, rode primeiro um SELECT com o mesmo WHERE para conferir exatamente quais registros serão afetados.</aside>
+</section>
+<section class="lesson-block"><header><p class="step-number">02 · Demonstração</p><h2>Fluxo seguro no SmartCoffee</h2></header>
+<pre class="sql-code"><code>-- 1. conferir o alvo
+SELECT * FROM produto WHERE id_produto = 2;
 
-<script src="../../assets/js/protected-content.js"></script></body></html>
+-- 2. alterar somente o registro esperado
+UPDATE produto
+SET estoque = 20
+WHERE id_produto = 2;
+
+-- 3. conferir o resultado
+SELECT * FROM produto WHERE id_produto = 2;</code></pre>
+</section>
+<section class="lesson-block lab-panel dml-lab"><header><p class="step-number">03 · DML Lab</p><h2>Manipule a tabela produto</h2><p>A simulação começa com três produtos. Use comandos DML para modificar os dados.</p></header>
+<label for="dml-input">Comando SQL</label>
+<textarea id="dml-input" spellcheck="false">INSERT INTO produto (nome, preco, estoque) VALUES ('Chocolate Quente', 12.50, 10);</textarea>
+<section class="ddl-actions"><button class="button" id="run-dml" type="button">▶ Executar DML</button><button class="button secondary-button" id="reset-dml" type="button">Restaurar dados</button></section>
+<div aria-live="polite" class="result-panel" id="dml-result">Aguardando comando...</div>
+<section class="data-preview"><h3>Estado atual da tabela produto</h3><div id="dml-table"></div></section>
+</section>
+<section class="lesson-block mission-assignment"><header><p class="step-number">04 · Sua missão</p><h2>Operação de atualização do cardápio</h2></header>
+<ol><li>Cadastre um novo produto com nome, preço e estoque.</li><li>Altere o preço de um produto existente.</li><li>Atualize o estoque de um item específico.</li><li>Remova somente um produto pelo identificador.</li><li>Explique por que UPDATE e DELETE sem WHERE são operações de alto risco.</li></ol>
+</section>
+<section class="lesson-block boss-panel"><p class="eyebrow">Boss Challenge</p><h2>Reajuste controlado</h2><p>O SmartCoffee precisa reajustar em 10% apenas os produtos com preço abaixo de R$ 10. Escreva o UPDATE adequado e, antes dele, um SELECT que mostre os registros que serão afetados.</p><details><summary>Ver estratégia</summary><pre class="sql-code"><code>SELECT * FROM produto WHERE preco &lt; 10;
+UPDATE produto SET preco = preco * 1.10 WHERE preco &lt; 10;</code></pre></details></section>
+<section class="lesson-block checkpoint" data-checkpoint="m09"><header><p class="step-number">05 · Checkpoint</p><h2>Validação da missão</h2></header>
+<form class="quiz-form">
+<fieldset><legend>1. Qual comando adiciona registros?</legend><label><input name="q1" type="radio" value="a"/> INSERT</label><label><input name="q1" type="radio" value="b"/> SELECT</label></fieldset>
+<fieldset><legend>2. Qual comando altera registros?</legend><label><input name="q2" type="radio" value="a"/> UPDATE</label><label><input name="q2" type="radio" value="b"/> CREATE</label></fieldset>
+<fieldset><legend>3. Qual comando remove registros?</legend><label><input name="q3" type="radio" value="a"/> DELETE</label><label><input name="q3" type="radio" value="b"/> ALTER</label></fieldset>
+<fieldset><legend>4. Em UPDATE/DELETE, o WHERE serve para:</legend><label><input name="q4" type="radio" value="a"/> Limitar os registros afetados</label><label><input name="q4" type="radio" value="b"/> Criar uma tabela</label></fieldset>
+<fieldset><legend>5. Antes de um DELETE, uma prática segura é:</legend><label><input name="q5" type="radio" value="a"/> Executar SELECT com o mesmo WHERE</label><label><input name="q5" type="radio" value="b"/> Remover o WHERE</label></fieldset>
+<button class="button quiz-submit" type="submit">Validar checkpoint</button><output class="quiz-result"></output>
+</form>
+</section>
+<nav class="mission-footer-nav"><a class="button secondary-button" href="missao08.html">← Missão 08</a><a class="button" href="missao10.html">Operação SmartCoffee →</a></nav>
+</main>
+<script src="../../assets/js/missions.js"></script></body></html>

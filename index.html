@@ -1,73 +1,65 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portal - Portal didático de Desenvolvimento de Sistemas do SENAI Luiz Varga - Limeira/SP - CFP 505">
-  <title>Portal | Desenvolvimento de Sistemas</title>
-  <link rel="stylesheet" href="assets/css/global.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Cenário Inovador - Portal didático de Desenvolvimento de Sistemas do SENAI Luiz Varga - Limeira/SP - CFP 505" name="description"/>
+<title>Cenário Inovador | Desenvolvimento de Sistemas</title>
+<link href="assets/css/global.css" rel="stylesheet"/>
 </head>
 <body class="home-page">
-  <header class="site-header">
-    <p class="eyebrow">Escola SENAI Luiz Varga - Limeira/SP - CFP 505</p>
-    <h1>Portal</h1>
-    <p class="subtitle">Aprenda. Experimente. Desenvolva.</p>
-  </header>
-
-  <main class="portal-grid" aria-label="Áreas de aprendizagem">
-    <article class="portal-card database-card">
-      <p class="tag">Banco de Dados</p>
-      <h2>Database Command Center</h2>
-      <p>Missões interativas de modelagem, SQL, DDL, DQL, DML, Constraints e aplicação prática no projeto SmartCoffee.</p>
-      <ul class="mini-list">
-        <li>Modelagem conceitual e lógica</li>
-        <li>SQL e consultas estratégicas</li>
-        <li>Laboratórios e desafios</li>
-      </ul>
-      <a class="button" href="login.html?next=database/index.html">Solicitar acesso à base</a>
-    </article>
-
-    <article class="portal-card web-card">
-      <p class="tag">Linguagem de Marcação</p>
-      <h2>Hawkins Web Lab</h2>
-      <p>Uma jornada por HTML semântico, CSS, wireframes, Figma e JavaScript, com experiências entre o mundo normal e o “mundo invertido”.</p>
-      <ul class="mini-list">
-        <li>HTML semântico</li>
-        <li>CSS e identidade visual</li>
-        <li>JavaScript e interatividade</li>
-      </ul>
-      <a class="button" href="web/index.html">Acessar Hawkins Lab</a>
-    </article>
-  </main>
-
-  <section class="roadmap" aria-labelledby="roadmap-title">
-    <div>
-      <p class="eyebrow">Projeto integrador</p>
-      <h2 id="roadmap-title">Do conceito ao sistema funcionando</h2>
-    </div>
-    <ol class="roadmap-steps">
-      <li>Requisitos</li>
-      <li>Wireframe</li>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-      <li>Banco de Dados</li>
-      <li>CRUD</li>
-    </ol>
-  </section>
-
-
-  <!-- <section class="public-access" aria-labelledby="access-public-title">
-    <div>
-      <p class="eyebrow">Conteúdo protegido</p>
-      <h2 id="access-public-title">Seu acesso começa pelo Gateway</h2>
-      <p>A página inicial é pública. Missões, aulas e laboratórios exigem uma sessão autorizada pelo professor.</p>
-    </div>
-    <div class="public-access-actions"><a class="button" href="login.html">Abrir portal de acesso →</a><a class="button secondary-button" href="login.html?next=aluno.html">Meu progresso</a></div>
-  </section> -->
-
-  <footer class="site-footer">
-    <p>Portal · Desenvolvimento de Sistemas · SENAI-SP - Desenvolvido por profº Bruno Moraes</p>
-  </footer>
+<header class="site-header">
+<p class="eyebrow">Escola SENAI Luiz Varga - Limeira/SP - CFP 505</p>
+<h1>Cenário Inovador</h1>
+<p class="subtitle">Aprenda. Experimente. Desenvolva.</p>
+</header>
+<main aria-label="Áreas de aprendizagem" class="portal-grid">
+<article class="portal-card database-card">
+<p class="tag">Banco de Dados</p>
+<h2>Database Command Center</h2>
+<p>Missões interativas de modelagem, SQL, DDL, DQL, DML, Constraints e aplicação prática no projeto SmartCoffee.</p>
+<ul class="mini-list">
+<li>Modelagem conceitual e lógica</li>
+<li>SQL e consultas estratégicas</li>
+<li>Laboratórios e desafios</li>
+</ul>
+<a class="button" href="database/index.html">Acessar Database Command Center</a>
+</article>
+<article class="portal-card web-card">
+<p class="tag">Linguagem de Marcação</p>
+<h2>Hawkins Web Lab</h2>
+<p>Uma jornada por HTML semântico, CSS, wireframes, Figma e JavaScript, com experiências entre o mundo normal e o “mundo invertido”.</p>
+<ul class="mini-list">
+<li>HTML semântico</li>
+<li>CSS e identidade visual</li>
+<li>JavaScript e interatividade</li>
+</ul>
+<a class="button" href="web/index.html">Acessar Hawkins Web Lab</a>
+</article>
+</main>
+<section aria-labelledby="roadmap-title" class="roadmap">
+<div>
+<p class="eyebrow">Projeto integrador</p>
+<h2 id="roadmap-title">Do conceito ao sistema funcionando</h2>
+</div>
+<ol class="roadmap-steps">
+<li>Requisitos</li>
+<li>Wireframe</li>
+<li>HTML</li>
+<li>CSS</li>
+<li>JavaScript</li>
+<li>Banco de Dados</li>
+<li>CRUD</li>
+</ol>
+</section>
+<section aria-labelledby="access-public-title" class="public-access">
+<div><p class="eyebrow">Acesso direto</p><h2 id="access-public-title">Explore as trilhas livremente</h2>
+<p>Todo o conteúdo didático está disponível diretamente pelo portal. Escolha uma trilha, avance pelas aulas e use os laboratórios interativos no navegador.</p></div>
+<div class="public-access-actions"><a class="button" href="database/index.html">Entrar no Database →</a><a class="button secondary-button" href="web/index.html">Entrar no Hawkins →</a></div>
+</section>
+<footer class="site-footer">
+<p>Cenário Inovador · Desenvolvimento de Sistemas · SENAI-SP</p>
+</footer>
 </body>
 </html>
