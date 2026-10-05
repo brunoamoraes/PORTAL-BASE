@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🚀 Portal
+<!-- # 🚀 Portal
 
 ### Ambiente Interativo de Aprendizagem · Desenvolvimento de Sistemas
 
@@ -14,13 +14,13 @@
 
 ---
 
-## 🧭 Escolha seu universo
+## 🧭 Escolha seu universo -->
 
 ### 🪐 Database Command Center
 
 [![Database Command Center](assets/readme/banner_database_command_center.jpg)](https://brunoamoraes.github.io/cenario-inovador/database/index.html)
 
-**Banco de Dados · SQL · Modelagem · DDL · DQL · DML · Constraints · CRUD · SmartCoffee**
+<!-- **Banco de Dados · SQL · Modelagem · DDL · DQL · DML · Constraints · CRUD · SmartCoffee** -->
 
 > Clique no banner para entrar diretamente no **Database Command Center**.
 
@@ -36,7 +36,7 @@
 
 ---
 
-## 🎮 Como funciona
+## Como funciona
 
 O **Portal** transforma o conteúdo das aulas em uma experiência prática. Cada trilha combina explicação, experimentação e desafios no próprio navegador.
 
@@ -44,7 +44,7 @@ O **Portal** transforma o conteúdo das aulas em uma experiência prática. Cada
 
 O progresso dos checkpoints é armazenado localmente no navegador do dispositivo, sem necessidade de login.
 
-## 🪐 Trilha Database Command Center
+<!-- ## 🪐 Trilha Database Command Center
 
 | Missão | Conteúdo |
 |---|---|
@@ -79,7 +79,7 @@ O progresso dos checkpoints é armazenado localmente no navegador do dispositivo
 
 ## 🧪 Laboratórios interativos
 
-O portal contém experiências como **SQL Lab**, **DDL Lab**, **SQL Challenge Center**, **CSS Lab**, **Wireframe Builder**, **Prototype Lab**, **HTML Translator**, **Flexbox Control Room** e **DOM Signal Lab**.
+O portal contém experiências como **SQL Lab**, **DDL Lab**, **SQL Challenge Center**, **CSS Lab**, **Wireframe Builder**, **Prototype Lab**, **HTML Translator**, **Flexbox Control Room** e **DOM Signal Lab**. -->
 
 ## ☕ Projeto SmartCoffee
 
@@ -92,7 +92,7 @@ O SmartCoffee conecta o aprendizado de Banco de Dados à construção de um sist
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
 ![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-222?logo=github&logoColor=white)
 
-## 📁 Estrutura
+<!-- ## 📁 Estrutura
 
 ```text
 cenario-inovador/
@@ -108,13 +108,13 @@ cenario-inovador/
 └── web/
     ├── index.html
     └── aulas/
-```
+``` -->
 
-## 🌐 Publicação
+<!-- ## 🌐 Publicação
 
 O projeto foi preparado para **GitHub Pages**. Mantenha `index.html` na raiz do repositório e configure **Settings → Pages → Deploy from a branch → main → /(root)**.
 
-> Caso o nome do repositório ou usuário do GitHub seja diferente, atualize os links absolutos dos banners neste README.
+> Caso o nome do repositório ou usuário do GitHub seja diferente, atualize os links absolutos dos banners neste README. -->
 
 ---
 
@@ -124,5 +124,7 @@ O projeto foi preparado para **GitHub Pages**. Mantenha `index.html` na raiz do 
 **Escola SENAI Luiz Varga — Limeira/SP — CFP 505**
 
 **Portal — Aprenda. Experimente. Desenvolva.**
+
+**Desenvolvido por Bruno Moraes**
 
 </div>
