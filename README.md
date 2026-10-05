@@ -1,6 +1,6 @@
 <div align="center">
 
-# PORTAL 
+<!-- # PORTAL 
 
 ### Ambiente Interativo de Aprendizagem — Desenvolvimento de Sistemas
 
@@ -8,7 +8,7 @@
 
 > **Aprenda. Experimente. Desenvolva.**
 
-<br> -->
+<br> --> 
 
 [![Acessar Cenário Inovador](https://img.shields.io/badge/ACESSAR%20O%20PORTAL-CENÁRIO%20INOVADOR-00C8FF?style=for-the-badge&logo=github)](https://brunoamoraes.github.io/PORTAL-BASE/index.html)
 
