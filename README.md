@@ -1,4 +1,4 @@
-<div align="center">
+<!-- <div align="center">
 
 # PORTAL 
 
@@ -8,17 +8,17 @@
 
 > **Aprenda. Experimente. Desenvolva.**
 
-<br>
+<br> -->
 
-[![Acessar Cenário Inovador](https://img.shields.io/badge/ACESSAR%20O%20PORTAL-CENÁRIO%20INOVADOR-00C8FF?style=for-the-badge&logo=github)](https://brunoamoraes.github.io/PORTAL/index.html)
+[![Acessar Cenário Inovador](https://img.shields.io/badge/ACESSAR%20O%20PORTAL-CENÁRIO%20INOVADOR-00C8FF?style=for-the-badge&logo=github)](https://brunoamoraes.github.io/PORTAL-BASE/index.html)
 
-</div>
+<!-- </div> -->
 
 ---
 
 ## 🎮 Escolha seu universo
 
-O **Cenário Inovador** reúne dois ambientes de aprendizagem dentro do mesmo portal. Cada trilha possui conteúdos, missões, laboratórios, desafios, checkpoints e projetos práticos.
+O **Portal** reúne dois ambientes de aprendizagem dentro do mesmo portal. Cada trilha possui conteúdos, missões, laboratórios, desafios, checkpoints e projetos práticos.
 
 ### 🪐 Database Command Center
 
@@ -26,7 +26,7 @@ O **Cenário Inovador** reúne dois ambientes de aprendizagem dentro do mesmo po
   <img src="assets/readme/banner_database_command_center.png" alt="Acessar Database Command Center" width="100%">
 </a>
 
-**Banco de Dados • SQL • Modelagem • DQL • DML • CRUD • SmartCoffee**
+<!-- **Banco de Dados • SQL • Modelagem • DQL • DML • CRUD • SmartCoffee** -->
 
 > Clique no banner para acessar o **Database Command Center**.
 
@@ -38,7 +38,7 @@ O **Cenário Inovador** reúne dois ambientes de aprendizagem dentro do mesmo po
   <img src="assets/readme/banner_hawkins_web_lab.png" alt="Acessar Hawkins Web Lab" width="100%">
 </a>
 
-**HTML • CSS • JavaScript • DOM • Wireframe • Figma • Desenvolvimento Web**
+<!-- **HTML • CSS • JavaScript • DOM • Wireframe • Figma • Desenvolvimento Web** -->
 
 > Clique no banner para acessar o **Hawkins Web Lab**.
 
