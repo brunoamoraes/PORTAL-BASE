@@ -1,109 +1,65 @@
 <div align="center">
 
-<!-- # PORTAL 
+# 🚀 Portal
 
-### Ambiente Interativo de Aprendizagem — Desenvolvimento de Sistemas
+### Ambiente Interativo de Aprendizagem · Desenvolvimento de Sistemas
 
 **Escola SENAI Luiz Varga — Limeira/SP — CFP 505**
 
 > **Aprenda. Experimente. Desenvolva.**
 
-<br> --> 
-<!-- 
-[![Acessar Portal](https://img.shields.io/badge/ACESSAR%20O%20PORTAL-CENÁRIO%20INOVADOR-00C8FF?style=for-the-badge&logo=github)](https://brunoamoraes.github.io/PORTAL-BASE/index.html) -->
+[🌐 ACESSAR O PORTAL](https://brunoamoraes.github.io/cenario-inovador/)
 
-<!-- </div> -->
-
-## Escolha seu universo
-
-O **Portal** reúne dois ambientes de aprendizagem dentro do mesmo portal. Cada trilha possui conteúdos, missões, laboratórios, desafios, checkpoints e projetos práticos.
-
-### Database Command Center
-
-<a href="https://brunoamoraes.github.io/PORTAL-BASE/index.html">
-  <img src="assets/readme/banner_database_command_center.png" alt="Acessar Database Command Center" width="100%">
-</a>
-
-<!-- **Banco de Dados • SQL • Modelagem • DQL • DML • CRUD • SmartCoffee** -->
-
-> Clique no banner para acessar o **Database Command Center**.
+</div>
 
 ---
 
-### Hawkins Web Lab
+## 🧭 Escolha seu universo
 
-<a href="https://brunoamoraes.github.io/PORTAL-BASE/index.html">
-  <img src="assets/readme/banner_hawkins_web_lab.png" alt="Acessar Hawkins Web Lab" width="100%">
-</a>
+### 🪐 Database Command Center
 
-<!-- **HTML • CSS • JavaScript • DOM • Wireframe • Figma • Desenvolvimento Web** -->
+[![Database Command Center](assets/readme/banner_database_command_center.jpg)](https://brunoamoraes.github.io/cenario-inovador/database/index.html)
 
-> Clique no banner para acessar o **Hawkins Web Lab**.
+**Banco de Dados · SQL · Modelagem · DDL · DQL · DML · Constraints · CRUD · SmartCoffee**
 
-
-<!-- ## 🧭 Como funciona a jornada
-
-```text
-Página Inicial
-      ↓
-Portal de Login
-      ↓
-Autenticação Supabase
-      ↓
-Perfil autorizado
-      ↓
-┌──────────────────────┬──────────────────────┐
-│ Database Command     │ Hawkins Web Lab      │
-│ Center               │                      │
-└──────────────────────┴──────────────────────┘
-      ↓
-Missões • Aulas • Laboratórios • Checkpoints
-      ↓
-Minha Jornada
-```
+> Clique no banner para entrar diretamente no **Database Command Center**.
 
 ---
 
-## 🪐 Database Command Center
+### 🔴 Hawkins Web Lab
 
-A trilha de Banco de Dados transforma os conteúdos em uma sequência de **missões**.
+[![Hawkins Web Lab](assets/readme/banner_hawkins_web_lab.jpg)](https://brunoamoraes.github.io/cenario-inovador/web/index.html)
+
+**HTML · CSS · JavaScript**
+
+> Clique no banner para entrar diretamente no **Hawkins Web Lab**.
+
+---
+
+## 🎮 Como funciona
+
+O **Portal** transforma o conteúdo das aulas em uma experiência prática. Cada trilha combina explicação, experimentação e desafios no próprio navegador.
+
+**Briefing → Conteúdo → Laboratório → Sua Missão → Boss Challenge → Checkpoint**
+
+O progresso dos checkpoints é armazenado localmente no navegador do dispositivo, sem necessidade de login.
+
+## 🪐 Trilha Database Command Center
 
 | Missão | Conteúdo |
 |---|---|
 | 01 | Universo dos Dados |
-| 02 | Entidades, atributos e MER |
-| 03 | Relacionamentos e cardinalidades |
-| 04 | Chaves primárias e estrangeiras |
-| 05 | Modelo lógico e dicionário de dados |
-| 06 | DDL — implantação da base |
-| 07 | Constraints e integridade |
-| 08 | DQL — inteligência de dados |
-| 09 | DML — manipulação de dados |
+| 02 | Mapeando a Galáxia |
+| 03 | Relacionamentos e Cardinalidades |
+| 04 | Chaves Primárias e Estrangeiras |
+| 05 | Modelo Lógico e Dicionário de Dados |
+| 06 | DDL e Implantação |
+| 07 | Constraints e Integridade |
+| 08 | DQL e SQL Challenge Center |
+| 09 | DML — INSERT, UPDATE e DELETE |
 | 10 | Operação SmartCoffee — CRUD |
 
-### ☕ Projeto SmartCoffee
-
-O **SmartCoffee** funciona como projeto integrador da trilha, permitindo ao aluno aplicar progressivamente:
-
-```text
-Modelagem
-   ↓
-Banco de Dados
-   ↓
-SQL
-   ↓
-HTML / CSS / JavaScript
-   ↓
-CRUD
-   ↓
-Aplicação Web
-```
-
----
-
-## 🔴 Hawkins Web Lab
-
-No Hawkins Web Lab, o aluno percorre uma trilha de desenvolvimento Web inspirada em um ambiente de ficção científica e suspense.
+## 🔴 Trilha Hawkins Web Lab
 
 | Aula | Conteúdo |
 |---|---|
@@ -116,103 +72,57 @@ No Hawkins Web Lab, o aluno percorre uma trilha de desenvolvimento Web inspirada
 | 07 | Layouts |
 | 08 | Wireframe |
 | 09 | Figma e Alta Fidelidade |
-| 10 | Wireframe → HTML |
+| 10 | Wireframe → HTML Semântico |
 | 11 | Flexbox |
 | 12 | CSS Avançado |
-| 13 | JavaScript e DOM |
-| 14 | JavaScript Aplicado |
-| 15 | Projeto Integrado |
-| 16 | Formulário + Banco de Dados |
+| 13 | JavaScript + DOM |
+
+## 🧪 Laboratórios interativos
+
+O portal contém experiências como **SQL Lab**, **DDL Lab**, **SQL Challenge Center**, **CSS Lab**, **Wireframe Builder**, **Prototype Lab**, **HTML Translator**, **Flexbox Control Room** e **DOM Signal Lab**.
+
+## ☕ Projeto SmartCoffee
+
+O SmartCoffee conecta o aprendizado de Banco de Dados à construção de um sistema real, passando por modelagem, SQL, regras de negócio e CRUD.
+
+## 🛠️ Tecnologias
+
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
+![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-222?logo=github&logoColor=white)
+
+## 📁 Estrutura
+
+```text
+cenario-inovador/
+├── index.html
+├── README.md
+├── assets/
+│   ├── css/
+│   ├── js/
+│   └── readme/
+├── database/
+│   ├── index.html
+│   └── missoes/
+└── web/
+    ├── index.html
+    └── aulas/
+```
+
+## 🌐 Publicação
+
+O projeto foi preparado para **GitHub Pages**. Mantenha `index.html` na raiz do repositório e configure **Settings → Pages → Deploy from a branch → main → /(root)**.
+
+> Caso o nome do repositório ou usuário do GitHub seja diferente, atualize os links absolutos dos banners neste README.
 
 ---
 
-## 🧪 Aprender fazendo
-
-Cada aula ou missão segue uma estrutura didática comum:
-
-**📡 Briefing → 📚 Conteúdo → 🧪 Laboratório → 🎯 Sua Missão → 👾 Boss Challenge → ✅ Checkpoint**
-
-O objetivo é fazer com que o aluno não apenas leia o conteúdo, mas **experimente, teste, erre, corrija e construa soluções**.
-
----
-
-## 💻 Laboratórios interativos
-
-O portal possui ambientes práticos diretamente no navegador.
-
-### SQL Lab
-
-```sql
-SELECT nome, preco
-FROM produto
-WHERE preco > 10
-ORDER BY preco DESC;
-```
-
-### HTML Lab
-
-```html
-<main>
-    <section>
-        <article>
-            <h2>Hawkins Web Lab</h2>
-            <p>Experimento iniciado.</p>
-        </article>
-    </section>
-</main>
-```
-
-### Flexbox Control Room
-
-```css
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 1rem;
-```
-
-## Minha Jornada
-
-Cada aluno possui uma área de acompanhamento onde pode visualizar:
-
-- aulas e missões concluídas;
-- progresso em Banco de Dados;
-- progresso no Hawkins Web Lab;
-- checkpoints realizados;
-- continuidade da trilha.
-
---- -->
-
-## Tecnologias
-
 <div align="center">
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-<!-- ![Supabase](https://img.shields.io/badge/Supabase-3FCF8E?style=for-the-badge&logo=supabase&logoColor=white) -->
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
-![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
+### SENAI · Desenvolvimento de Sistemas
+**Escola SENAI Luiz Varga — Limeira/SP — CFP 505**
+
+**Portal — Aprenda. Experimente. Desenvolva.**
 
 </div>
-
-
-<!-- ## 🌐 Acesso
-
-<div align="center">
-
-### [🚀 ACESSAR PORTAL](https://brunoamoraes.github.io/PORTAL-BASE/index.html)
-
-**Aprenda. Experimente. Desenvolva.**
-
-</div>
-
---- -->
-
-## Projeto Educacional
-
-**Escola SENAI Luiz Varga — Limeira/SP — CFP 505**  
-Curso Técnico em Desenvolvimento de Sistemas
-
-Desenvolvido por Bruno Moraes
