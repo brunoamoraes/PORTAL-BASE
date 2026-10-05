@@ -14,8 +14,6 @@
 
 <!-- </div> -->
 
----
-
 ## Escolha seu universo
 
 O **Portal** reúne dois ambientes de aprendizagem dentro do mesmo portal. Cada trilha possui conteúdos, missões, laboratórios, desafios, checkpoints e projetos práticos.
@@ -42,7 +40,6 @@ O **Portal** reúne dois ambientes de aprendizagem dentro do mesmo portal. Cada 
 
 > Clique no banner para acessar o **Hawkins Web Lab**.
 
----
 
 <!-- ## 🧭 Como funciona a jornada
 
