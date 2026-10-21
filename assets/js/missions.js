@@ -62,7 +62,7 @@ document.querySelectorAll('.checkpoint').forEach(checkpoint => {
     const percent = score * 20;
     const passed = percent >= 70;
     result.textContent = passed
-      ? `Checkpoint concluído: ${score}/5 (${percent}%). Missão validada.`
+      ? `Checkpoint concluído: ${score}/5 (${percent}%). Aula validada.`
       : `Resultado: ${score}/5 (${percent}%). Revise o conteúdo e tente novamente.`;
     result.className = `quiz-result ${passed ? 'feedback-ok' : 'feedback-error'}`;
 
@@ -75,7 +75,7 @@ document.querySelectorAll('.checkpoint').forEach(checkpoint => {
 
   if (localStorage.getItem(cenarioProgressKey(key)) === 'completed') {
     document.body.classList.add('mission-completed');
-    result.textContent = '✓ Esta missão já foi validada neste dispositivo.';
+    result.textContent = '✓ Esta aula já foi validada neste dispositivo.';
     result.className = 'quiz-result feedback-ok';
   }
 });

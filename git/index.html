@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Git Royale Arena - Central didática de Git e GitHub do Cenário Inovador SENAI Luiz Varga" name="description"/>
+<title>Git Royale Arena | Cenário Inovador</title>
+<link href="../assets/css/global.css" rel="stylesheet"/>
+</head>
+<body class="git-page">
+<header class="git-hero">
+<nav aria-label="Navegação principal" class="git-topbar">
+<a class="back-link" href="../index.html">← Voltar ao Cenário Inovador</a>
+<span class="git-crown">♛ GIT ROYALE</span>
+</nav>
+<div class="git-hero-grid">
+<section>
+<p class="eyebrow">Escola SENAI Luiz Varga · Limeira/SP · CFP 505</p>
+<h1>Git Royale<br/><span>Arena</span></h1>
+<p class="git-lead">Entre na arena do versionamento. Pesquise comandos, domine branches, resolva conflitos e evolua do primeiro <code>git init</code> até a colaboração no GitHub.</p>
+<div class="git-badges"><span>⚔️ Git</span><span>🛡️ GitHub</span><span>👑 Versionamento</span></div>
+</section>
+<aside aria-label="Fluxo essencial do Git" class="royale-board">
+<p class="arena-label">FLUXO DE BATALHA</p>
+<div class="battle-flow">
+<span>WORKING<br/>TREE</span><b>→</b><span>STAGING<br/>AREA</span><b>→</b><span>LOCAL<br/>REPO</span><b>→</b><span>GITHUB</span>
+</div>
+<pre><code>git add .
+git commit -m "minha evolução"
+git push origin main</code></pre>
+</aside>
+</div>
+</header>
+<figure class="theme-banner git-theme-banner"><img alt="Git Royale Arena - personagem mago em arena de fantasia" src="../assets/images/bruno_banner_git.png"/></figure><main class="git-shell">
+<section aria-labelledby="search-title" class="git-search-panel">
+<div>
+<p class="arena-label">CENTRAL DE CONSULTA</p>
+<h2 id="search-title">O que você precisa fazer?</h2>
+<p>Pesquise por comando, conceito, erro ou situação. Exemplos: <strong>commit</strong>, <strong>branch</strong>, <strong>conflito</strong>, <strong>Pages</strong>, <strong>pull</strong>.</p>
+</div>
+<label class="git-search-box">
+<span aria-hidden="true">⌕</span>
+<input autocomplete="off" id="git-search" placeholder="Buscar em Git e GitHub..." type="search"/>
+</label>
+<div aria-live="polite" class="search-summary" id="search-summary">Mostrando todas as cartas da arena.</div>
+</section>
+<section aria-label="Trilha por arenas" class="arena-progress">
+<article><span>ARENA 01</span><strong>Fundamentos</strong><small>init · status · config</small></article>
+<article><span>ARENA 02</span><strong>Commits</strong><small>add · commit · log</small></article>
+<article><span>ARENA 03</span><strong>Branches</strong><small>switch · merge · conflict</small></article>
+<article><span>ARENA 04</span><strong>GitHub</strong><small>remote · push · pull · clone</small></article>
+<article><span>ARENA 05</span><strong>Colaboração</strong><small>issues · PR · review</small></article>
+<article><span>ARENA 06</span><strong>Deploy</strong><small>Pages · releases · actions</small></article>
+</section>
+<section aria-labelledby="quick-title" class="git-quick-actions">
+<p class="arena-label">ATALHOS DE BATALHA</p>
+<h2 id="quick-title">Situações que aparecem toda hora</h2>
+<div class="quick-grid">
+<button data-query="primeiro commit">🚀 Primeiro commit</button>
+<button data-query="enviar github push">☁️ Enviar ao GitHub</button>
+<button data-query="atualizar pull fetch">🔄 Atualizar projeto</button>
+<button data-query="branch merge">🌿 Trabalhar com branches</button>
+<button data-query="conflito merge">⚔️ Resolver conflito</button>
+<button data-query="desfazer reset revert restore">↩️ Desfazer alteração</button>
+<button data-query="gitignore">🙈 Ignorar arquivos</button>
+<button data-query="pages publicar site">🌐 Publicar no GitHub Pages</button>
+</div>
+</section>
+<section aria-labelledby="cards-title">
+<div class="git-section-heading"><div><p class="arena-label">CARTAS DE CONHECIMENTO</p><h2 id="cards-title">Git &amp; GitHub na prática</h2></div><button class="button" id="clear-search">Limpar busca</button></div>
+<div class="git-card-grid" id="git-cards">
+<article class="knowledge-card" data-search="config configurar identidade nome email git config user name email">
+<span class="card-arena">Arena 01 · Fundamentos</span><h3>Configurar sua identidade</h3><p>Defina nome e e-mail usados nos commits.</p><pre><code>git config --global user.name "Seu Nome"
+git config --global user.email "email@exemplo.com"</code></pre><details><summary>Quando usar?</summary><p>Na primeira configuração do Git em um computador ou ao corrigir a autoria dos commits.</p></details></article>
+<article class="knowledge-card" data-search="init iniciar repositorio repositório novo projeto">
+<span class="card-arena">Arena 01 · Fundamentos</span><h3>git init</h3><p>Transforma uma pasta comum em um repositório Git.</p><pre><code>git init</code></pre><details><summary>Como conferir?</summary><p>Execute <code>git status</code>. O Git passa a acompanhar a pasta e cria internamente o diretório <code>.git</code>.</p></details></article>
+<article class="knowledge-card" data-search="status verificar arquivos alterações staged untracked modified">
+<span class="card-arena">Arena 01 · Fundamentos</span><h3>git status</h3><p>Mostra o estado dos arquivos e da área de preparação.</p><pre><code>git status</code></pre><details><summary>Dica</summary><p>É um dos comandos mais seguros para executar quando você não sabe em que estado o repositório está.</p></details></article>
+<article class="knowledge-card" data-search="add stage staging preparar arquivos primeiro commit git add ponto arquivo">
+<span class="card-arena">Arena 02 · Commits</span><h3>git add</h3><p>Envia alterações para a Staging Area antes do commit.</p><pre><code>git add .
+# ou
+git add index.html</code></pre><details><summary>O que o ponto faz?</summary><p><code>git add .</code> adiciona as alterações do diretório atual e abaixo dele para preparação.</p></details></article>
+<article class="knowledge-card" data-search="commit salvar versão snapshot mensagem primeiro commit">
+<span class="card-arena">Arena 02 · Commits</span><h3>git commit</h3><p>Registra uma versão das alterações preparadas.</p><pre><code>git commit -m "feat: cria página inicial"</code></pre><details><summary>Boa prática</summary><p>Use uma mensagem curta que explique o que mudou, e não apenas “alterações”.</p></details></article>
+<article class="knowledge-card" data-search="log historico histórico commits visualizar oneline graph">
+<span class="card-arena">Arena 02 · Commits</span><h3>Histórico de commits</h3><p>Consulte a linha do tempo do projeto.</p><pre><code>git log --oneline --graph --decorate</code></pre><details><summary>Para que serve?</summary><p>Ajuda a localizar commits, entender branches e identificar onde uma mudança entrou.</p></details></article>
+<article class="knowledge-card" data-search="branch criar listar ramo ramificação feature">
+<span class="card-arena">Arena 03 · Branches</span><h3>Criar uma branch</h3><p>Crie uma linha de desenvolvimento independente.</p><pre><code>git switch -c feature/login</code></pre><details><summary>Listar branches</summary><pre><code>git branch</code></pre></details></article>
+<article class="knowledge-card" data-search="switch checkout trocar branch voltar main">
+<span class="card-arena">Arena 03 · Branches</span><h3>Trocar de branch</h3><p>Use <code>switch</code> para navegar entre branches.</p><pre><code>git switch main
+git switch feature/login</code></pre><details><summary>E o checkout?</summary><p><code>git checkout</code> ainda existe, mas <code>git switch</code> deixa a intenção de troca de branch mais clara.</p></details></article>
+<article class="knowledge-card" data-search="merge mesclar juntar branch main feature">
+<span class="card-arena">Arena 03 · Branches</span><h3>Mesclar branches</h3><p>Traga alterações de uma branch para outra.</p><pre><code>git switch main
+git merge feature/login</code></pre><details><summary>Antes do merge</summary><p>Confirme a branch atual com <code>git status</code> e prefira estar com o trabalho salvo em commits.</p></details></article>
+<article class="knowledge-card boss-card" data-search="conflito merge conflict resolver markers&lt;&lt;&lt;&lt;&lt;&lt;&lt; ======= &gt;&gt;&gt;&gt;&gt;&gt;&gt;">
+<span class="card-arena">BOSS · Conflitos</span><h3>Resolver conflito de merge</h3><p>O Git não conseguiu escolher automaticamente qual versão manter.</p><pre><code>git status
+# edite os arquivos em conflito
+git add arquivo.html
+git commit</code></pre><details><summary>Procure no arquivo</summary><p>Os marcadores <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code> e <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> mostram os trechos que precisam de decisão.</p></details></article>
+<article class="knowledge-card" data-search="clone clonar baixar github repositorio repositório">
+<span class="card-arena">Arena 04 · GitHub</span><h3>Clonar um repositório</h3><p>Cria uma cópia local de um projeto remoto.</p><pre><code>git clone URL_DO_REPOSITORIO</code></pre><details><summary>Depois do clone</summary><p>Entre na pasta criada com <code>cd nome-do-repositorio</code> e confira <code>git status</code>.</p></details></article>
+<article class="knowledge-card" data-search="remote origin conectar github repositório remoto add url">
+<span class="card-arena">Arena 04 · GitHub</span><h3>Conectar ao GitHub</h3><p>Associe o repositório local a um remoto.</p><pre><code>git remote add origin URL_DO_REPOSITORIO
+git remote -v</code></pre><details><summary>O que é origin?</summary><p>É o nome convencional dado ao repositório remoto principal.</p></details></article>
+<article class="knowledge-card" data-search="push enviar github origin main upstream -u">
+<span class="card-arena">Arena 04 · GitHub</span><h3>git push</h3><p>Envia commits locais ao GitHub.</p><pre><code>git push -u origin main</code></pre><details><summary>Depois da primeira vez</summary><p>Quando o upstream estiver configurado, normalmente basta executar <code>git push</code>.</p></details></article>
+<article class="knowledge-card" data-search="pull atualizar projeto baixar mesclar remoto github">
+<span class="card-arena">Arena 04 · GitHub</span><h3>git pull</h3><p>Busca alterações do remoto e tenta integrá-las à branch atual.</p><pre><code>git pull origin main</code></pre><details><summary>Antes de usar</summary><p>Confira se você possui alterações locais não salvas. Em projetos colaborativos, faça pull com frequência.</p></details></article>
+<article class="knowledge-card" data-search="fetch buscar remoto sem mesclar atualizar referências">
+<span class="card-arena">Arena 04 · GitHub</span><h3>git fetch</h3><p>Atualiza informações do remoto sem alterar seus arquivos de trabalho.</p><pre><code>git fetch origin</code></pre><details><summary>Pull x fetch</summary><p><code>fetch</code> apenas busca referências; <code>pull</code> busca e integra as alterações.</p></details></article>
+<article class="knowledge-card" data-search="stash guardar temporariamente alterações trocar branch pop">
+<span class="card-arena">Arena 04 · Git</span><h3>Guardar alterações temporárias</h3><p>Use stash quando precisa interromper um trabalho ainda não commitado.</p><pre><code>git stash
+git stash pop</code></pre><details><summary>Quando ajuda?</summary><p>Por exemplo, quando você precisa trocar de branch rapidamente sem criar um commit incompleto.</p></details></article>
+<article class="knowledge-card" data-search="restore desfazer arquivo alterações não commitadas recuperar">
+<span class="card-arena">Arena 04 · Recuperação</span><h3>git restore</h3><p>Restaura arquivo modificado para a versão registrada.</p><pre><code>git restore arquivo.html</code></pre><details><summary>Atenção</summary><p>Alterações locais não commitadas podem ser perdidas. Confirme antes de executar.</p></details></article>
+<article class="knowledge-card" data-search="revert desfazer commit seguro novo commit histórico compartilhado">
+<span class="card-arena">Arena 04 · Recuperação</span><h3>git revert</h3><p>Cria um novo commit que desfaz as mudanças de outro commit.</p><pre><code>git revert HASH_DO_COMMIT</code></pre><details><summary>Quando preferir?</summary><p>É adequado para histórico já compartilhado, pois não reescreve os commits anteriores.</p></details></article>
+<article class="knowledge-card danger-card" data-search="reset desfazer commits hard soft mixed perigoso">
+<span class="card-arena">Arena 04 · Recuperação</span><h3>git reset</h3><p>Move o ponteiro da branch e pode alterar staging/arquivos conforme o modo.</p><pre><code>git reset --soft HEAD~1</code></pre><details><summary>⚠ Cuidado</summary><p><code>--hard</code> pode apagar alterações locais. Em histórico compartilhado, considere <code>git revert</code>.</p></details></article>
+<article class="knowledge-card" data-search="gitignore ignorar node_modules env arquivos segredo temporários">
+<span class="card-arena">Arena 04 · Projeto limpo</span><h3>.gitignore</h3><p>Evite versionar arquivos gerados, dependências e dados locais.</p><pre><code>node_modules/
+.env
+.DS_Store</code></pre><details><summary>Importante</summary><p>Não use <code>.gitignore</code> como única proteção para segredos que já foram commitados. Credenciais expostas devem ser revogadas.</p></details></article>
+<article class="knowledge-card" data-search="issue issues tarefa bug melhoria github planejamento">
+<span class="card-arena">Arena 05 · Colaboração</span><h3>GitHub Issues</h3><p>Registre bugs, tarefas, ideias e critérios de aceite.</p><details open=""><summary>Boa estrutura</summary><p>Título claro + contexto + passos/requisitos + resultado esperado + evidências quando necessário.</p></details></article>
+<article class="knowledge-card" data-search="pull request pr colaboração revisão review merge github">
+<span class="card-arena">Arena 05 · Colaboração</span><h3>Pull Request</h3><p>Propõe integrar alterações de uma branch e permite revisão antes do merge.</p><details open=""><summary>Fluxo</summary><p>Branch → commits → push → Pull Request → revisão → ajustes → merge.</p></details></article>
+<article class="knowledge-card" data-search="fork forkear contribuir projeto externo github">
+<span class="card-arena">Arena 05 · Colaboração</span><h3>Fork</h3><p>Cria uma cópia de um repositório na sua conta do GitHub para desenvolver independentemente.</p><details><summary>Uso comum</summary><p>Contribuições em projetos nos quais você não possui permissão direta de escrita.</p></details></article>
+<article class="knowledge-card" data-search="pages github pages site publicar deploy index html settings branch main root">
+<span class="card-arena">Arena 06 · Deploy</span><h3>GitHub Pages</h3><p>Publique sites estáticos diretamente de um repositório.</p><ol><li>Settings → Pages</li><li>Deploy from a branch</li><li>Escolha <code>main</code> e <code>/(root)</code></li><li>Mantenha <code>index.html</code> na raiz publicada</li></ol><details><summary>Dica para links</summary><p>Em project pages, prefira caminhos relativos como <code>web/index.html</code> em vez de caminhos iniciados por <code>/</code>.</p></details></article>
+<article class="knowledge-card" data-search="erro rejected non-fast-forward push rejeitado pull first divergiram diverged">
+<span class="card-arena">Boss · Erros comuns</span><h3>Push rejeitado / histórico remoto mudou</h3><p>O remoto possui commits que sua branch local ainda não tem.</p><pre><code>git status
+git pull --rebase origin main
+# resolva conflitos se houver
+git push origin main</code></pre><details><summary>Não force sem entender</summary><p>Evite <code>git push --force</code> em branches compartilhadas. Ele pode sobrescrever histórico remoto.</p></details></article>
+<article class="knowledge-card" data-search="erro not a git repository não é repositório pasta errada cd rev-parse show-toplevel">
+<span class="card-arena">Boss · Erros comuns</span><h3>“Not a git repository”</h3><p>Você provavelmente está fora da pasta que contém o repositório.</p><pre><code>git rev-parse --show-toplevel</code></pre><details><summary>Se falhar</summary><p>Navegue com <code>cd</code> até a pasta correta ou inicialize um novo repositório somente se isso for realmente a intenção.</p></details></article>
+<article class="knowledge-card" data-search="autenticação token ssh https github password senha credencial">
+<span class="card-arena">Arena 06 · Conta</span><h3>Autenticação com GitHub</h3><p>Operações Git por HTTPS não usam a senha comum da conta como credencial Git.</p><details open=""><summary>Opções</summary><p>Use Git Credential Manager, token quando aplicável ou configure uma chave SSH. Nunca coloque tokens dentro do código ou do repositório.</p></details></article>
+</div>
+<div class="git-empty" hidden="" id="empty-state"><strong>Nenhuma carta encontrada.</strong><p>Tente outro termo, como “commit”, “branch”, “conflito”, “Pages” ou “pull”.</p></div>
+</section>
+<section aria-labelledby="docs-title" class="official-docs">
+<div><p class="arena-label">FONTES OFICIAIS</p><h2 id="docs-title">Continue a pesquisa</h2><p>Use a arena como consulta rápida e confirme detalhes avançados na documentação oficial.</p></div>
+<div class="docs-actions">
+<a class="button" href="https://git-scm.com/doc" rel="noopener" target="_blank">Documentação Git ↗</a>
+<a class="button" href="https://docs.github.com/" rel="noopener" target="_blank">GitHub Docs ↗</a>
+</div>
+</section>
+</main>
+<footer class="site-footer"><p>Git Royale Arena · Cenário Inovador · Desenvolvimento de Sistemas · SENAI-SP</p></footer>
+<script src="../assets/js/git-royale.js"></script>
+</body>
+</html>
