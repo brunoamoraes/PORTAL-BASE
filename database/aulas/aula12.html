@@ -1,0 +1,12 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Aula 12 | Database Command Center</title><link href="../../assets/css/global.css" rel="stylesheet"/></head><body class="database-page mission-page"><header class="section-header mission-hero"><div class="mission-nav"><a class="back-link" href="../index.html">← Voltar ao Database</a><span class="mission-code">MISSÃO 12</span></div><p class="eyebrow">Banco de Dados · SmartCoffee</p><h1>Views</h1><p>Criando visões reutilizáveis e relatórios no SmartCoffee.</p></header><main class="content-shell lesson-shell"><section class="briefing-panel"><p class="eyebrow">Briefing</p><h2>Objetivo da missão</h2><p>Avance pelo conteúdo, execute os exemplos no MySQL e registre as decisões técnicas. O foco é compreender o motivo das escolhas, não apenas reproduzir comandos.</p></section><section class="lesson-block"><p class="step-number">ETAPA 01</p><h2>Conceito</h2><p>Uma VIEW é uma consulta armazenada que pode ser utilizada como uma tabela virtual.</p><pre class='sql-code'>CREATE VIEW vw_produtos_ativos AS
+SELECT id_produto, nome, preco
+FROM produto
+WHERE ativo = TRUE;</pre></section>
+<section class="lesson-block"><p class="step-number">ETAPA 02</p><h2>JOIN em Views</h2><p>Uma VIEW pode reunir dados de várias tabelas e simplificar relatórios.</p><pre class='sql-code'>CREATE VIEW vw_pedidos_clientes AS
+SELECT p.id_pedido, c.nome, p.data_pedido
+FROM pedido p
+JOIN cliente c ON c.id_cliente = p.id_cliente;</pre></section>
+<section class="lesson-block"><p class="step-number">ETAPA 03</p><h2>Agregações</h2><p>Views podem encapsular COUNT, SUM, AVG e GROUP BY para relatórios.</p><p class='commander-note'>VIEW representa uma consulta, não um processo.</p></section>
+<section class="lesson-block"><p class="step-number">ETAPA 04</p><h2>Gerenciamento</h2><p>Use SHOW CREATE VIEW, CREATE OR REPLACE VIEW e DROP VIEW para manter as visões.</p><pre class='sql-code'>SHOW CREATE VIEW vw_produtos_ativos;
+DROP VIEW IF EXISTS vw_produtos_ativos;</pre></section>
+<section class="lesson-block"><p class="step-number">ETAPA 05</p><h2>Cuidados</h2><p>Views não substituem índices e nem sempre são atualizáveis. Avalie o objetivo de cada camada.</p></section><nav class="mission-footer-nav"><a class="button secondary-button" href="../index.html">← Central de missões</a><a class="button" href="../missoes/banco360.html">Operação 360° →</a></nav></main></body></html>

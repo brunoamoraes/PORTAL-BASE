@@ -1,0 +1,18 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Aula 13 | Database Command Center</title><link href="../../assets/css/global.css" rel="stylesheet"/></head><body class="database-page mission-page"><header class="section-header mission-hero"><div class="mission-nav"><a class="back-link" href="../index.html">← Voltar ao Database</a><span class="mission-code">MISSÃO 13</span></div><p class="eyebrow">Banco de Dados · SmartCoffee</p><h1>Stored Procedures</h1><p>Automatizando operações e regras de negócio no SmartCoffee.</p></header><main class="content-shell lesson-shell"><section class="briefing-panel"><p class="eyebrow">Briefing</p><h2>Objetivo da missão</h2><p>Avance pelo conteúdo, execute os exemplos no MySQL e registre as decisões técnicas. O foco é compreender o motivo das escolhas, não apenas reproduzir comandos.</p></section><section class="lesson-block"><p class="step-number">ETAPA 01</p><h2>DELIMITER e estrutura</h2><p>Stored Procedure é uma rotina armazenada que pode receber parâmetros, processar regras e devolver resultados.</p><pre class='sql-code'>DELIMITER $$
+CREATE PROCEDURE listar_produtos()
+BEGIN
+  SELECT * FROM produto;
+END $$
+DELIMITER ;</pre></section>
+<section class="lesson-block"><p class="step-number">ETAPA 02</p><h2>Parâmetros IN e OUT</h2><p>IN recebe valores; OUT permite devolver resultados ao chamador.</p><pre class='sql-code'>CALL contar_produtos_ativos(@total);
+SELECT @total;</pre></section>
+<section class="lesson-block"><p class="step-number">ETAPA 03</p><h2>Variáveis e SELECT INTO</h2><p>Use DECLARE para variáveis locais e SELECT ... INTO para carregar valores.</p><pre class='sql-code'>DECLARE v_preco DECIMAL(10,2);
+SELECT preco INTO v_preco FROM produto WHERE id_produto = p_id_produto;</pre></section>
+<section class="lesson-block"><p class="step-number">ETAPA 04</p><h2>IF / ELSEIF / ELSE</h2><p>Procedures podem tomar decisões com base em dados e parâmetros.</p><pre class='sql-code'>IF v_quantidade = 0 THEN
+  SELECT 'SEM ESTOQUE';
+ELSEIF v_quantidade <= 5 THEN
+  SELECT 'ESTOQUE BAIXO';
+ELSE
+  SELECT 'ESTOQUE NORMAL';
+END IF;</pre></section>
+<section class="lesson-block"><p class="step-number">ETAPA 05</p><h2>Procedure de negócio</h2><p>Integre INSERT, UPDATE, variáveis e transações em processos como criação de pedido, fidelidade e atualização de estoque.</p><div class='commander-note'>VIEW = consulta armazenada. PROCEDURE = processo armazenado.</div></section><nav class="mission-footer-nav"><a class="button secondary-button" href="../index.html">← Central de missões</a><a class="button" href="../missoes/banco360.html">Operação 360° →</a></nav></main></body></html>
