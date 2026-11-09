@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Operação Banco de Dados 360°</title>
+<link href="../../assets/css/global.css" rel="stylesheet"/>
+<style>
+.command-shell{width:min(1180px,calc(100% - 32px));margin:0 auto 64px}.command-panel{border:1px solid rgba(145,223,240,.22);border-radius:24px;background:linear-gradient(180deg,rgba(11,32,42,.96),rgba(5,11,16,.98));padding:26px;box-shadow:0 24px 70px rgba(0,0,0,.35)}.squad-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.squad-btn{text-align:left;border:1px solid rgba(255,255,255,.13);border-radius:14px;background:rgba(255,255,255,.035);color:#fff;padding:14px;cursor:pointer}.squad-btn small,.squad-btn span{display:block;color:#9eb1bd}.squad-btn strong{display:block;font-size:1.4rem;color:#bff7ff;margin:3px 0}.squad-btn span{font-size:.72rem}.squad-btn.active{border-color:#66f3d2;background:rgba(102,243,210,.07)}.operation-layout{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;margin-top:20px}.operation-card{border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:22px;background:rgba(255,255,255,.025)}.operation-card h2{margin:5px 0 10px}.operation-card p{color:#aab4c2;line-height:1.7}.member-list{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:9px}.member-list li{border-left:2px solid #66f3d2;padding:7px 0 7px 12px;color:#e7f5f8}.scenario-structure{white-space:pre-wrap;background:#020406;color:#bff7ff;border:1px solid rgba(145,223,240,.2);border-radius:14px;padding:17px;line-height:1.6;overflow:auto}.protocol{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:18px}.protocol span{border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:10px;text-align:center;color:#aab4c2;font-size:.78rem}.warning{border-left:3px solid #ffc46b;background:rgba(255,196,107,.06);padding:14px 16px;margin-top:18px;color:#e9ddca}.scenario-note{margin-top:18px;color:#cfeff5;font-size:.9rem}.operation-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}@media(max-width:860px){.squad-grid{grid-template-columns:repeat(2,1fr)}.operation-layout{grid-template-columns:1fr}.protocol{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body class="database-page">
+<header class="section-header mission-hero">
+<div class="mission-nav"><a class="back-link" href="../index.html">← Voltar ao Database</a><span class="mission-code">OPERAÇÃO 360°</span></div>
+<p class="eyebrow">Database Command Center · Missão especial</p>
+<h1>Banco de Dados 360°</h1>
+<p>Auditoria, modelagem, SQL, normalização, indexação e defesa técnica.</p>
+<div class="mission-stats"><p><strong>8</strong> esquadras</p><p><strong>8</strong> cenários atribuídos</p><p><strong>Status:</strong> missão ativa</p></div>
+</header>
+<main class="command-shell">
+<section class="command-panel">
+<div class="squad-grid">
+<button class="squad-btn active" data-group="A" type="button"><small>ESQUADRA</small><strong>A</strong><span>Cenário 1</span></button>
+<button class="squad-btn" data-group="B" type="button"><small>ESQUADRA</small><strong>B</strong><span>Cenário 3</span></button>
+<button class="squad-btn" data-group="C" type="button"><small>ESQUADRA</small><strong>C</strong><span>Cenário 8</span></button>
+<button class="squad-btn" data-group="D" type="button"><small>ESQUADRA</small><strong>D</strong><span>Cenário 10</span></button>
+<button class="squad-btn" data-group="E" type="button"><small>ESQUADRA</small><strong>E</strong><span>Cenário 5</span></button>
+<button class="squad-btn" data-group="F" type="button"><small>ESQUADRA</small><strong>F</strong><span>Cenário 2</span></button>
+<button class="squad-btn" data-group="G" type="button"><small>ESQUADRA</small><strong>G</strong><span>Cenário 9</span></button>
+<button class="squad-btn" data-group="H" type="button"><small>ESQUADRA</small><strong>H</strong><span>Cenário 7</span></button>
+</div>
+<div class="operation-layout">
+<article class="operation-card"><p class="eyebrow">Missão atribuída</p><h2 id="scenario-title"></h2><p id="scenario-desc"></p><h3>Estrutura problemática recebida</h3><pre id="scenario-structure" class="scenario-structure"></pre><div class="warning"><strong>Primeira ordem:</strong> identifique pelo menos dois problemas técnicos antes de reconstruir o banco. Não avance diretamente para o SQL.</div><p class="scenario-note">Depois do diagnóstico: regras de negócio → brModelo → dicionário → DDL → DML/DQL → TCL → normalização → INDEX/EXPLAIN.</p></article>
+<aside class="operation-card"><p class="eyebrow">Tripulação</p><h2 id="group-name"></h2><ul id="member-list" class="member-list"></ul><h3>Protocolo da missão</h3><div class="protocol"><span>01<br>Diagnosticar</span><span>02<br>Modelar</span><span>03<br>Implementar</span><span>04<br>Otimizar</span><span>05<br>Defender</span></div><div class="operation-actions"><a class="button" href="../aulas/aula11.html">Revisar Normalização</a><a class="button secondary-button" href="../aulas/aula13.html">Revisar Procedures</a></div></aside>
+</div>
+</section>
+<section class="lesson-block"><p class="step-number">ENTREGA</p><h2>O que cada esquadra precisa entregar</h2><div class="concept-grid"><article class="concept-card"><h3>DER / brModelo</h3><p>Entidades, atributos, identificadores, relacionamentos e cardinalidades.</p></article><article class="concept-card"><h3>SQL completo</h3><p>DDL, DML, DQL, TCL, normalização e indexação organizados por comentários.</p></article><article class="concept-card"><h3>Relatório</h3><p>Diagnóstico, regras de negócio, correções, justificativas e conclusão.</p></article><article class="concept-card"><h3>Defesa técnica</h3><p>Apresentação com participação de todos e demonstração ao vivo.</p></article></div></section>
+</main>
+<script>
+const groups={
+A:{scenario:'Cenário 1 — Manutenção Industrial',members:['FRANZ KRAMER DA SILVA','DAVI FERREIRA DA SILVA','GABRIELLI ARAUJO MARTINS SILVA','GABRIEL TRAVAGLINI NOGUEIRA'],desc:'Máquinas, técnicos, manutenções e ordens de serviço.',structure:'MANUTENCAO_GERAL\nid_ordem\ndata_abertura\nmaquina_nome\nmaquina_setor\ntecnico_nome\ntecnico_telefone\nservico1\nservico2\nstatus_ordem'},
+B:{scenario:'Cenário 3 — Oficina Mecânica',members:['LUANA LIMA GALDINO DE SOUZA','LEONARDO HENRIQUE DIAS','LARISSA RAMIRES DE SOUZA','LÍVIA STEIN PEREIRA'],desc:'Clientes, veículos, serviços, peças e ordens de serviço.',structure:'ORDEM_OFICINA\nid_ordem\ncliente_nome\ncliente_telefone\nveiculo_placa\nveiculo_modelo\nservico1\nservico2\nservico3\nvalor_total'},
+C:{scenario:'Cenário 8 — Controle de Produção',members:['KEYNAN FELLIPE DOS SANTOS','ARTHUR DE MEDEIROS NUNES','DANDARA PESSÔA DIAS','FELIPE RODRIGUES'],desc:'Produtos, máquinas, operadores e ordens de produção.',structure:'PRODUCAO_DIARIA\nid_producao\ndata\noperador_nome\noperador_matricula\nmaquina_nome\nproduto1\nproduto2\nquantidade_produto1\nquantidade_produto2'},
+D:{scenario:'Cenário 10 — Centro de Treinamento',members:['ISABELLA ALVES DO CARMO CLETO','FRANCISCO MIGUEL MAGRI','BEATRIZ RAÍSSA DA SILVEIRA','LUCCAS MANFREDI'],desc:'Alunos, cursos, turmas, instrutores e matrículas.',structure:'MATRICULA_GERAL\nid_matricula\naluno_nome\naluno_email\ncurso_nome\ncurso_carga_horaria\ninstrutor_nome\nturma_data_inicio\nturma_data_fim'},
+E:{scenario:'Cenário 5 — Clínica Ocupacional',members:['RAFAEL VIEIRA ANTONY','PEDRO HENRIQUE MIRANDA','MATEUS SILVA DE OLIVEIRA','SOPHIA CAROLINA SOARES DA CUNHA'],desc:'Funcionários, médicos, exames e atendimentos.',structure:'ATENDIMENTO_OCUPACIONAL\nid_atendimento\nfuncionario_nome\nfuncionario_cpf\nempresa_nome\nmedico_nome\nexame1\nexame2\nresultado_geral\ndata_atendimento'},
+F:{scenario:'Cenário 2 — Almoxarifado Industrial',members:['REBECCA HERNANDES DE SOUZA FERREIRA','MARIA EDUARDA SAMPAIO ASSUMPÇÃO','SAMIRA EMILY DALOSTO','VINÍCIUS HENRIQUE RIBEIRO DA SILVA'],desc:'Materiais, estoque, fornecedores e movimentações.',structure:'MOVIMENTACAO_ESTOQUE\nid_movimentacao\nmaterial_nome\nmaterial_descricao\nfornecedor_nome\nfornecedor_cnpj\nquantidade\nestoque_atual\ntelefone_fornecedor'},
+G:{scenario:'Cenário 9 — Assistência Técnica',members:['VINÍCIUS OLIVEIRA SANTOS','STEFANY LEME SANTANA','OTAVIO CORREIA','LUÍS FELIPE DALFRÉ FORMIGARI'],desc:'Clientes, equipamentos, chamados, técnicos e peças.',structure:'CHAMADO_TECNICO\nid_chamado\ncliente_nome\ncliente_telefone\nequipamento_modelo\nequipamento_numero_serie\ntecnico_nome\npeca1\npeca2\nstatus_chamado'},
+H:{scenario:'Cenário 7 — Restaurante Industrial',members:['MATHEUS ORICOLLI DA SILVA','NICOLAS FILIPE AMANCIO','VANESSA QUEIROZ DA SILVA','RENNAN CAMPOS VIEIRA'],desc:'Pedidos, produtos, fornecedores e estoque.',structure:'PEDIDO_RESTAURANTE\nid_pedido\ncliente_nome\nproduto1\nproduto2\nproduto3\nfornecedor_produto1\nquantidade1\nquantidade2\nvalor_total'}
+};
+const buttons=[...document.querySelectorAll('.squad-btn')];const title=document.querySelector('#scenario-title'),desc=document.querySelector('#scenario-desc'),structure=document.querySelector('#scenario-structure'),groupName=document.querySelector('#group-name'),members=document.querySelector('#member-list');function render(key){const g=groups[key];buttons.forEach(b=>b.classList.toggle('active',b.dataset.group===key));title.textContent=g.scenario;desc.textContent=g.desc;structure.textContent=g.structure;groupName.textContent='GRUPO '+key;members.replaceChildren(...g.members.map((m,i)=>{const li=document.createElement('li');li.textContent=(i+1)+'. '+m;return li;}));}buttons.forEach(b=>b.addEventListener('click',()=>render(b.dataset.group)));render('A');
+</script>
+</body></html>
